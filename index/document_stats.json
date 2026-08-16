@@ -1,0 +1,402 @@
+{
+  "DOC0001": {
+    "title": "Information retrieval - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Information_retrieval",
+    "word_count": 3650,
+    "unique_terms": 1282,
+    "max_term_frequency": 151
+  },
+  "DOC0002": {
+    "title": "Machine learning - Wikipedia",
+    "category": "Machine Learning",
+    "url": "https://en.wikipedia.org/wiki/Machine_learning",
+    "word_count": 11592,
+    "unique_terms": 3070,
+    "max_term_frequency": 458
+  },
+  "DOC0003": {
+    "title": "Artificial intelligence - Wikipedia",
+    "category": "Artificial Intelligence",
+    "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+    "word_count": 18545,
+    "unique_terms": 4301,
+    "max_term_frequency": 289
+  },
+  "DOC0004": {
+    "title": "Natural language processing - Wikipedia",
+    "category": "Natural Language Processing",
+    "url": "https://en.wikipedia.org/wiki/Natural_language_processing",
+    "word_count": 4699,
+    "unique_terms": 1501,
+    "max_term_frequency": 139
+  },
+  "DOC0005": {
+    "title": "Data mining - Wikipedia",
+    "category": "Data Mining",
+    "url": "https://en.wikipedia.org/wiki/Data_mining",
+    "word_count": 4387,
+    "unique_terms": 1425,
+    "max_term_frequency": 294
+  },
+  "DOC0006": {
+    "title": "Special Interest Group on Information Retrieval - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Special_Interest_Group_on_Information_Retrieval",
+    "word_count": 1079,
+    "unique_terms": 545,
+    "max_term_frequency": 38
+  },
+  "DOC0007": {
+    "title": "Book sources - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-0-521-86571-5",
+    "word_count": 4269,
+    "unique_terms": 1106,
+    "max_term_frequency": 634
+  },
+  "DOC0008": {
+    "title": "PubMed Central - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/PMC_(identifier)",
+    "word_count": 2492,
+    "unique_terms": 944,
+    "max_term_frequency": 46
+  },
+  "DOC0009": {
+    "title": "Allen Kent - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Allen_Kent",
+    "word_count": 597,
+    "unique_terms": 299,
+    "max_term_frequency": 19
+  },
+  "DOC0010": {
+    "title": "File:Commons-logo.svg - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/File:Commons-logo.svg",
+    "word_count": 604,
+    "unique_terms": 316,
+    "max_term_frequency": 43
+  },
+  "DOC0011": {
+    "title": "Massachusetts Institute of Technology - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/MIT",
+    "word_count": 14058,
+    "unique_terms": 3571,
+    "max_term_frequency": 610
+  },
+  "DOC0012": {
+    "title": "Book sources - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Special:BookSources/978-963-9799-76-9",
+    "word_count": 4269,
+    "unique_terms": 1106,
+    "max_term_frequency": 634
+  },
+  "DOC0013": {
+    "title": "Herman Hollerith - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Herman_Hollerith",
+    "word_count": 1542,
+    "unique_terms": 695,
+    "max_term_frequency": 65
+  },
+  "DOC0014": {
+    "title": "Category:Articles with excerpts - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Category:Articles_with_excerpts",
+    "word_count": 472,
+    "unique_terms": 184,
+    "max_term_frequency": 159
+  },
+  "DOC0015": {
+    "title": "Learned sparse retrieval - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/SPLADE",
+    "word_count": 841,
+    "unique_terms": 381,
+    "max_term_frequency": 31
+  },
+  "DOC0016": {
+    "title": "Terrier (search engine) - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Terrier_Search_Engine",
+    "word_count": 385,
+    "unique_terms": 196,
+    "max_term_frequency": 12
+  },
+  "DOC0017": {
+    "title": "Búsqueda y recuperación de información - Wikipedia, la enciclopedia libre",
+    "category": "Information Retrieval",
+    "url": "https://es.wikipedia.org/wiki/B%C3%BAsqueda_y_recuperaci%C3%B3n_de_informaci%C3%B3n",
+    "word_count": 1789,
+    "unique_terms": 737,
+    "max_term_frequency": 49
+  },
+  "DOC0018": {
+    "title": "Case Western Reserve University - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Case_Western_Reserve_University",
+    "word_count": 7857,
+    "unique_terms": 2290,
+    "max_term_frequency": 369
+  },
+  "DOC0019": {
+    "title": "Search engine indexing - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Search_engine_indexing",
+    "word_count": 2931,
+    "unique_terms": 859,
+    "max_term_frequency": 147
+  },
+  "DOC0020": {
+    "title": "Taxonomy - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Taxonomy",
+    "word_count": 4221,
+    "unique_terms": 1409,
+    "max_term_frequency": 194
+  },
+  "DOC0021": {
+    "title": "Karen Spärck Jones - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Karen_Spärck_Jones",
+    "word_count": 1747,
+    "unique_terms": 635,
+    "max_term_frequency": 64
+  },
+  "DOC0022": {
+    "title": "Recommender system - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Recommender_systems",
+    "word_count": 6336,
+    "unique_terms": 1744,
+    "max_term_frequency": 323
+  },
+  "DOC0023": {
+    "title": "Best NFL Betting Sites 2025 – Top NFL Betting Apps Ranked",
+    "category": "Information Retrieval",
+    "url": "http://www.lisbdnet.com/information-retrieval-syste",
+    "word_count": 3491,
+    "unique_terms": 709,
+    "max_term_frequency": 222
+  },
+  "DOC0024": {
+    "title": "Probabilistic relevance model - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Probabilistic_relevance_model",
+    "word_count": 346,
+    "unique_terms": 188,
+    "max_term_frequency": 13
+  },
+  "DOC0025": {
+    "title": "Searching MEDLINE in English: a prototype user interface with natural language query, ranked output, and relevance feedback (Conference) | OSTI.GOV",
+    "category": "Information Retrieval",
+    "url": "https://www.osti.gov/biblio/5047496",
+    "word_count": 542,
+    "unique_terms": 189,
+    "max_term_frequency": 17
+  },
+  "DOC0026": {
+    "title": "Library classification - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Library_classification",
+    "word_count": 1846,
+    "unique_terms": 708,
+    "max_term_frequency": 129
+  },
+  "DOC0027": {
+    "title": "Feature engineering - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Feature_extraction",
+    "word_count": 1939,
+    "unique_terms": 790,
+    "max_term_frequency": 97
+  },
+  "DOC0028": {
+    "title": "Bayes' theorem - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Bayes'_theorem",
+    "word_count": 3191,
+    "unique_terms": 1024,
+    "max_term_frequency": 136
+  },
+  "DOC0029": {
+    "title": "Joseph Marie Jacquard - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Joseph_Marie_Jacquard",
+    "word_count": 1663,
+    "unique_terms": 756,
+    "max_term_frequency": 62
+  },
+  "DOC0030": {
+    "title": "Category:Pages displaying short descriptions of redirect targets via Module:Annotated link - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Category:Pages_displaying_short_descriptions_of_redirect_targets_via_Module:Annotated_link",
+    "word_count": 748,
+    "unique_terms": 501,
+    "max_term_frequency": 24
+  },
+  "DOC0031": {
+    "title": "Uncertain inference - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Uncertain_inference",
+    "word_count": 504,
+    "unique_terms": 255,
+    "max_term_frequency": 18
+  },
+  "DOC0032": {
+    "title": "Information Retrieval Facility - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Information_Retrieval_Facility",
+    "word_count": 528,
+    "unique_terms": 260,
+    "max_term_frequency": 22
+  },
+  "DOC0033": {
+    "title": "Help:Contents - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Help:Contents",
+    "word_count": 1020,
+    "unique_terms": 512,
+    "max_term_frequency": 38
+  },
+  "DOC0034": {
+    "title": "Information behavior - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Information_behavior",
+    "word_count": 2898,
+    "unique_terms": 924,
+    "max_term_frequency": 273
+  },
+  "DOC0035": {
+    "title": "Grateful Dead - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Grateful_Dead",
+    "word_count": 9939,
+    "unique_terms": 2737,
+    "max_term_frequency": 385
+  },
+  "DOC0036": {
+    "title": "[2107.09226] Pressure-robust staggered DG methods for the Navier-Stokes equations on general meshes",
+    "category": "Information Retrieval",
+    "url": "https://arxiv.org/abs/2107.09226",
+    "word_count": 410,
+    "unique_terms": 215,
+    "max_term_frequency": 14
+  },
+  "DOC0037": {
+    "title": "Music information retrieval - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Music_information_retrieval",
+    "word_count": 1180,
+    "unique_terms": 515,
+    "max_term_frequency": 83
+  },
+  "DOC0038": {
+    "title": "Parsoid - MediaWiki",
+    "category": "Information Retrieval",
+    "url": "https://www.mediawiki.org/wiki/Special:MyLanguage/Parsoid",
+    "word_count": 1695,
+    "unique_terms": 539,
+    "max_term_frequency": 131
+  },
+  "DOC0039": {
+    "title": "Jacquard machine - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Jacquard_loom",
+    "word_count": 1952,
+    "unique_terms": 850,
+    "max_term_frequency": 80
+  },
+  "DOC0040": {
+    "title": "Google",
+    "category": "Information Retrieval",
+    "url": "https://www.google.com/search",
+    "word_count": 55,
+    "unique_terms": 38,
+    "max_term_frequency": 6
+  },
+  "DOC0041": {
+    "title": "Text Retrieval Conference - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Text_Retrieval_Conference",
+    "word_count": 1960,
+    "unique_terms": 641,
+    "max_term_frequency": 78
+  },
+  "DOC0042": {
+    "title": "information retrieval - Wikidata",
+    "category": "Information Retrieval",
+    "url": "https://www.wikidata.org/wiki/Special:EntityPage/Q816826",
+    "word_count": 898,
+    "unique_terms": 400,
+    "max_term_frequency": 81
+  },
+  "DOC0043": {
+    "title": "Information Retrieval – Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://de.wikipedia.org/wiki/Information_Retrieval",
+    "word_count": 5772,
+    "unique_terms": 1883,
+    "max_term_frequency": 196
+  },
+  "DOC0044": {
+    "title": "Multi-document summarization - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Multi-document_summarization",
+    "word_count": 1297,
+    "unique_terms": 576,
+    "max_term_frequency": 43
+  },
+  "DOC0045": {
+    "title": "Digital object identifier - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Doi_(identifier)",
+    "word_count": 2797,
+    "unique_terms": 891,
+    "max_term_frequency": 195
+  },
+  "DOC0046": {
+    "title": "Internet freedom - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Internet_freedom",
+    "word_count": 754,
+    "unique_terms": 404,
+    "max_term_frequency": 37
+  },
+  "DOC0047": {
+    "title": "Recuperació d'informació - Viquipèdia, l'enciclopèdia lliure",
+    "category": "Information Retrieval",
+    "url": "https://ca.wikipedia.org/wiki/Recuperaci%C3%B3_d%27informaci%C3%B3",
+    "word_count": 1884,
+    "unique_terms": 785,
+    "max_term_frequency": 54
+  },
+  "DOC0048": {
+    "title": "Wikimedia",
+    "category": "Information Retrieval",
+    "url": "https://www.wikimedia.org/",
+    "word_count": 135,
+    "unique_terms": 84,
+    "max_term_frequency": 13
+  },
+  "DOC0049": {
+    "title": "Intellectual property - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Intellectual_property",
+    "word_count": 8133,
+    "unique_terms": 2184,
+    "max_term_frequency": 298
+  },
+  "DOC0050": {
+    "title": "Talk:Information retrieval - Wikipedia",
+    "category": "Information Retrieval",
+    "url": "https://en.wikipedia.org/wiki/Talk:Information_retrieval",
+    "word_count": 1648,
+    "unique_terms": 608,
+    "max_term_frequency": 62
+  }
+}
