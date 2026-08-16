@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html class="client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 skin-theme-clientpref-day vector-feature-navigation-update-disabled vector-sticky-header-enabled vector-toc-available skin-thumbsize-clientpref-standard" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Learned sparse retrieval - Wikipedia</title>
+<script>(function(){var className="client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 skin-theme-clientpref-day vector-feature-navigation-update-disabled vector-sticky-header-enabled vector-toc-available skin-thumbsize-clientpref-standard";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"0ecb8bf6-2ca7-4bda-ab84-3f71a6fa019b","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Learned_sparse_retrieval","wgTitle":"Learned sparse retrieval","wgCurRevisionId":1332950861,"wgRevisionId":1332950861,"wgArticleId":74671424,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles with short description","Short description matches Wikidata","All stub articles","Information retrieval techniques","Computer science stubs","Computational linguistics stubs"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Learned_sparse_retrieval","wgRelevantArticleId":74671424,"wgTempUserName":null,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"SPLADE","wgNoticeProject":"wikipedia","wgFlaggedRevsParams":{"tags":{"status":{"levels":1}},"namespaces":[0,4]},"wgConfirmEditCaptchaNeededForGenericEdit":"hcaptcha","wgConfirmEditForceShowCaptcha":false,"wgConfirmEditHCaptchaSiteKey":"5d0c670e-a5f4-4258-ad16-1f42792c9c62","wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgMediaViewerMobileBeta":false,"wgPopupsFlags":0,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":false,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":10000,"wgInternalRedirectTargetUrl":"/wiki/Learned_sparse_retrieval","wgParsoidHtmlVersion":"2.8.0","parsermigration-parsoid":true,"wgTestKitchenUserExperiments":{"overrides":[],"enrolled":[],"assigned":[],"subject_ids":[]},"wgEditSubmitButtonLabelPublish":true,"wgVisualEditorPageIsDisambiguation":false,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":false,"wgVector2022LanguageInHeader":true,"wgULSisLanguageSelectorEmpty":false,"wgULSLanguageSelectorV2Enabled":true,"wgWikibaseItemId":"Q122363545","wgCheckUserClientHintsHeadersJsApi":["brands","architecture","bitness","fullVersionList","mobile","model","platform","platformVersion"],"wgPersonalDashboardMenuVisible":false};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.wikimediamessages.styles":"ready","ext.cite.parsoid.styles":"ready","ext.cite.styles":"ready","mediawiki.skinning.content.parsoid":"ready","skins.vector.search.codex.styles":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["mediawiki.action.view.redirect","ext.cite.ux-enhancements","site","mediawiki.page.ready","skins.vector.js","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.gadget.ReferenceTooltips","ext.gadget.switcher","ext.urlShortener.toolbar","ext.centralauth.centralautologin","ext.testKitchen","mmv.bootstrap","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.echo.centralauth","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.cx.uls.quick.actions","wikibase.client.vector-2022","wikibase.databox.fromWikidata","ext.checkUser.clientHints","ext.quicksurveys.init"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.cite.parsoid.styles%7Cext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cmediawiki.skinning.content.parsoid%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector-2022">
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector-2022"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector-2022">
+<meta name="generator" content="MediaWiki 1.47.0-wmf.15">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<meta property="og:title" content="Learned sparse retrieval - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/rest.php/v1/search" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Learned_sparse_retrieval">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="auth.wikimedia.org">
+</head>
+<body class="skin--responsive skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Learned_sparse_retrieval rootpage-Learned_sparse_retrieval skin-vector-2022 action-view">
+<div id="mw-aria-live-region" class="mw-aria-live-region" aria-live="polite"></div><a class="mw-jump-link" href="#bodyContent">Jump to content</a>
+<div class="vector-header-container">
+	<header class="vector-header mw-header no-font-mode-scale">
+		<div class="vector-header-start">
+			<nav class="vector-main-menu-landmark" aria-label="Site">
+				
+<div id="vector-main-menu-dropdown" class="vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right"  title="Main menu" >
+	<input type="checkbox" id="vector-main-menu-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-main-menu-dropdown" class="vector-dropdown-checkbox "  aria-label="Main menu"   >
+	<label id="vector-main-menu-dropdown-label" for="vector-main-menu-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Main menu</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+				<div id="vector-main-menu-unpinned-container" class="vector-unpinned-container">
+		
+<div id="vector-main-menu" class="vector-main-menu vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-main-menu-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="main-menu-pinned"
+	data-pinnable-element-id="vector-main-menu"
+	data-pinned-container-id="vector-main-menu-pinned-container"
+	data-unpinned-container-id="vector-main-menu-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Main menu</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-main-menu.pin" aria-label="Move Main menu to sidebar">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-main-menu.unpin" aria-label="Hide Main menu">hide</button>
+</div>
+
+	
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation"  >
+	<div class="vector-menu-heading">
+		Navigation
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main page</span></a></li><li id="n-contents" class="mw-list-item"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia"><span>Contents</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/Portal:Current_events" title="Articles related to current events"><span>Current events</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Visit a randomly selected article [x]" accesskey="x"><span>Random article</span></a></li><li id="n-aboutsite" class="mw-list-item"><a href="/wiki/Wikipedia:About" title="Learn about Wikipedia and how it works"><span>About Wikipedia</span></a></li><li id="n-contactpage" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia"><span>Contact us</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-interaction" class="vector-menu mw-portlet mw-portlet-interaction"  >
+	<div class="vector-menu-heading">
+		Contribute
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-help" class="mw-list-item"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia"><span>Help</span></a></li><li id="n-introduction" class="mw-list-item"><a href="/wiki/Help:Introduction" title="Learn how to edit Wikipedia"><span>Learn to edit</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Wikipedia:Community_portal" title="The hub for editors"><span>Community portal</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes to Wikipedia [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-upload" class="mw-list-item"><a href="/wiki/Wikipedia:File_upload_wizard" title="Add images or other media for use on Wikipedia"><span>Upload file</span></a></li><li id="n-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+				</div>
+
+	</div>
+</div>
+
+		</nav>
+			
+<a href="/wiki/Main_Page" class="mw-logo">
+	<img class="mw-logo-icon" src="/static/images/icons/enwiki-25.svg" alt="" aria-hidden="true" height="50" width="50">
+	<span class="mw-logo-container skin-invert">
+		<img class="mw-logo-wordmark" alt="Wikipedia" src="/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg" style="width: 8.75em; height: 1.375em;">
+		<img class="mw-logo-tagline" alt="The Free Encyclopedia" src="/static/images/mobile/copyright/wikipedia-tagline-en-25.svg" width="140" height="11" style="width: 8.75em; height: 0.6875em;">
+	</span>
+</a>
+
+		</div>
+		<div class="vector-header-end">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="/wiki/Special:Search" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle" title="Search Wikipedia [f]" accesskey="f"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search cdx-button__icon"></span>
+
+<span>Search</span>
+	</a>
+	<div class="vector-typeahead-search-container">
+		<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail cdx-typeahead-search--auto-expand-width">
+			<form action="/w/index.php" id="searchform" class="cdx-search-input cdx-search-input--has-end-button">
+				<div id="simpleSearch" class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+					<div class="cdx-text-input cdx-text-input--has-start-icon">
+						<input
+							class="cdx-text-input__input mw-searchInput" autocomplete="off"
+							 type="search" name="search" placeholder="Search Wikipedia" aria-label="Search Wikipedia" autocapitalize="none" spellcheck="false" title="Search Wikipedia [f]" accesskey="f" id="searchInput"
+							>
+						<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+					</div>
+					<input type="hidden" name="title" value="Special:Search">
+				</div>
+				<button class="cdx-button cdx-search-input__end-button">Search</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+			<nav class="vector-user-links vector-user-links-wide" aria-label="Personal tools">
+	<div class="vector-user-links-main">
+	
+<div id="p-vector-user-menu-preferences" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-userpage" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	<nav class="vector-appearance-landmark" aria-label="Appearance">
+		
+<div id="vector-appearance-dropdown" class="vector-dropdown "  title="Change the appearance of the page&#039;s font size, width, and color" >
+	<input type="checkbox" id="vector-appearance-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-appearance-dropdown" class="vector-dropdown-checkbox "  aria-label="Appearance"   >
+	<label id="vector-appearance-dropdown-label" for="vector-appearance-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-appearance mw-ui-icon-wikimedia-appearance cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Appearance</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+			<div id="vector-appearance-unpinned-container" class="vector-unpinned-container">
+				
+			</div>
+		
+	</div>
+</div>
+
+	</nav>
+	
+<div id="p-vector-user-menu-notifications" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="pt-sitesupport-2" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en" data-mw-donate-attempt="top_link" class=""><span>Donate</span></a>
+</li>
+<li id="pt-createaccount-2" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Special:CreateAccount&amp;returnto=Learned+sparse+retrieval" title="You are encouraged to create an account and log in; however, it is not mandatory" class=""><span>Create account</span></a>
+</li>
+<li id="pt-login-2" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Special:UserLogin&amp;returnto=Learned+sparse+retrieval" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o" class=""><span>Log in</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+	</div>
+	
+<div id="vector-user-links-dropdown" class="vector-dropdown vector-user-menu vector-button-flush-right vector-user-menu-logged-out vector-user-links-dropdown--collapsible"  title="Log in and more options" >
+	<input type="checkbox" id="vector-user-links-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-user-links-dropdown" class="vector-dropdown-checkbox "  aria-label="Personal tools"   >
+	<label id="vector-user-links-dropdown-label" for="vector-user-links-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-userAvatar mw-ui-icon-wikimedia-userAvatar cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Personal tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+		
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal"  title="User menu" >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="pt-sitesupport" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en" data-mw-donate-attempt="top_link" class=""><span class="vector-icon mw-ui-icon-heart mw-ui-icon-wikimedia-heart cdx-button__icon"></span>
+
+<span>Donate</span></a>
+</li>
+<li id="pt-createaccount" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Special:CreateAccount&amp;returnto=Learned+sparse+retrieval" title="You are encouraged to create an account and log in; however, it is not mandatory" class=""><span class="vector-icon mw-ui-icon-userAvatar mw-ui-icon-wikimedia-userAvatar cdx-button__icon"></span>
+
+<span>Create account</span></a>
+</li>
+<li id="pt-login" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Special:UserLogin&amp;returnto=Learned+sparse+retrieval" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o" class=""><span class="vector-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn cdx-button__icon"></span>
+
+<span>Log in</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+	</div>
+</div>
+
+</nav>
+
+		</div>
+	</header>
+</div>
+<div class="mw-page-container">
+	<div class="mw-page-container-inner">
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"><!-- CentralNotice --></div>
+		</div>
+		<div class="vector-column-start">
+			<div class="vector-main-menu-container">
+		<div id="mw-navigation">
+			<nav id="mw-panel" class="vector-main-menu-landmark" aria-label="Site">
+				<div id="vector-main-menu-pinned-container" class="vector-pinned-container">
+				
+				</div>
+		</nav>
+		</div>
+	</div>
+	<div class="vector-sticky-pinned-container">
+				<nav id="mw-panel-toc" aria-label="Contents" data-event-name="ui.sidebar-toc" class="mw-table-of-contents-container vector-toc-landmark">
+					<div id="vector-toc-pinned-container" class="vector-pinned-container">
+					<div id="vector-toc" class="vector-toc vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-toc-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="toc-pinned"
+	data-pinnable-element-id="vector-toc"
+	data-pinned-container-id="vector-toc-pinned-container"
+	data-unpinned-container-id="vector-toc-unpinned-container"
+>
+	<h2 class="vector-pinnable-header-label">Contents</h2>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-toc.pin" aria-label="Move Contents to sidebar">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-toc.unpin" aria-label="Hide Contents">hide</button>
+</div>
+
+
+	<ul class="vector-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text"
+			class="vector-toc-list-item vector-toc-level-1">
+			<a href="#" class="vector-toc-link">
+				<div class="vector-toc-text">(Top)</div>
+			</a>
+		</li>
+		<li id="toc-Splade"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Splade">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">1</span>
+				<span>Splade</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Splade-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-External_links"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#External_links">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">2</span>
+				<span>External links</span>
+			</div>
+		</a>
+		
+		<ul id="toc-External_links-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Notes"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Notes">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">3</span>
+				<span>Notes</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Notes-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+</ul>
+</div>
+
+					</div>
+		</nav>
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body">
+				<header class="mw-body-header vector-page-titlebar no-font-mode-scale">
+					<nav aria-label="Contents" class="vector-toc-landmark">
+						
+<div id="vector-page-titlebar-toc" class="vector-dropdown vector-page-titlebar-toc vector-button-flush-left"  title="Table of Contents" >
+	<input type="checkbox" id="vector-page-titlebar-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-titlebar-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"   >
+	<label id="vector-page-titlebar-toc-label" for="vector-page-titlebar-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+							<div id="vector-page-titlebar-toc-unpinned-container" class="vector-unpinned-container">
+			</div>
+		
+	</div>
+</div>
+
+					</nav>
+					<h1 id="firstHeading" class="firstHeading mw-first-heading"><span lang="en" dir="ltr"><span class="mw-page-title-main">Learned sparse retrieval</span></span></h1>
+							
+<div id="p-lang-btn" class="vector-dropdown mw-portlet mw-portlet-lang"  >
+	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-dropdown-checkbox mw-interlanguage-selector"  aria-label="Add languages" aria-description="This article is only available in this language. Add the article for other languages"  >
+	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive mw-portlet-lang-heading-0" aria-hidden="true"  ><span class="vector-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Add languages</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+		<div class="vector-menu-content">
+			
+			<ul class="vector-menu-content-list">
+				
+				
+			</ul>
+			<div class="after-portlet after-portlet-lang"><span class="uls-after-portlet-link"></span><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q122363545#sitelinks-wikipedia" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>
+		</div>
+
+	</div>
+</div>
+</header>
+				<div class="vector-page-toolbar">
+					<div class="vector-page-toolbar-container">
+						<div id="left-navigation">
+							<nav aria-label="Namespaces">
+								
+<div id="p-associated-pages" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-associated-pages"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="ca-nstab-main" class="selected mw-list-item vector-tab-noicon"><a data-mw-interface  href="/wiki/Learned_sparse_retrieval" title="View the content page [c]" accesskey="c" class=""><span>Article</span></a>
+</li>
+<li id="ca-talk" class="mw-list-item vector-tab-noicon"><a data-mw-interface  href="/wiki/Talk:Learned_sparse_retrieval" rel="discussion" title="Discuss improvements to the content page [t]" accesskey="t" class=""><span>Talk</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+								
+<div id="vector-variants-dropdown" class="vector-dropdown emptyPortlet"  >
+	<input type="checkbox" id="vector-variants-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-variants-dropdown" class="vector-dropdown-checkbox " aria-label="Change language variant"    >
+	<label id="vector-variants-dropdown-label" for="vector-variants-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">English</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+					
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+						<div id="right-navigation" class="vector-collapsible">
+							<nav aria-label="Views">
+			    
+<div id="p-views" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-views"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="ca-view" class="selected mw-list-item vector-menu-item--collapsible vector-tab-noicon"><a data-mw-interface  href="/wiki/Learned_sparse_retrieval" class=""><span>Read</span></a>
+</li>
+<li id="ca-edit" class="mw-list-item vector-menu-item--collapsible vector-tab-noicon"><a data-mw-interface  href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit" title="Edit this page [e]" accesskey="e" class=""><span>Edit</span></a>
+</li>
+<li id="ca-history" class="mw-list-item vector-menu-item--collapsible vector-tab-noicon"><a data-mw-interface  href="/w/index.php?title=Learned_sparse_retrieval&amp;action=history" title="Past revisions of this page [h]" accesskey="h" class=""><span>View history</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+			</nav>
+
+							<nav class="vector-page-tools-landmark" aria-label="Page tools">
+								
+<div id="vector-page-tools-dropdown" class="vector-dropdown vector-page-tools-dropdown"  >
+	<input type="checkbox" id="vector-page-tools-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-tools-dropdown" class="vector-dropdown-checkbox "  aria-label="Tools"   >
+	<label id="vector-page-tools-dropdown-label" for="vector-page-tools-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-verticalEllipsis mw-ui-icon-wikimedia-verticalEllipsis cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+									<div id="vector-page-tools-unpinned-container" class="vector-unpinned-container">
+						
+<div id="vector-page-tools" class="vector-page-tools vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-page-tools-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="page-tools-pinned"
+	data-pinnable-element-id="vector-page-tools"
+	data-pinned-container-id="vector-page-tools-pinned-container"
+	data-unpinned-container-id="vector-page-tools-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Tools</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-page-tools.pin" aria-label="Move Tools to sidebar">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-page-tools.unpin" aria-label="Hide Tools">hide</button>
+</div>
+
+	
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet"  >
+	<div class="vector-menu-heading">
+		Actions
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="ca-view-more" class="selected mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/wiki/Learned_sparse_retrieval" class=""><span class="vector-icon mw-ui-icon-eye mw-ui-icon-wikimedia-eye cdx-button__icon"></span>
+
+<span>Read</span></a>
+</li>
+<li id="ca-edit-more" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit" title="Edit this page [e]" accesskey="e" class=""><span class="vector-icon mw-ui-icon-edit mw-ui-icon-wikimedia-edit cdx-button__icon"></span>
+
+<span>Edit</span></a>
+</li>
+<li id="ca-history-more" class="mw-list-item vector-menu-item--collapsible"><a data-mw-interface  href="/w/index.php?title=Learned_sparse_retrieval&amp;action=history" title="Past revisions of this page [h]" accesskey="h" class=""><span class="vector-icon mw-ui-icon-history mw-ui-icon-wikimedia-history cdx-button__icon"></span>
+
+<span>View history</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb"  >
+	<div class="vector-menu-heading">
+		General
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Learned_sparse_retrieval" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Learned_sparse_retrieval" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-upload" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u"><span>Upload file</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Learned_sparse_retrieval&amp;oldid=1332950861" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Learned_sparse_retrieval&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Learned_sparse_retrieval&amp;id=1332950861&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Special:UrlShortener&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FLearned_sparse_retrieval"><span>Get shortened URL</span></a></li><li class="mw-list-item"><a href="/w/index.php?title=Learned_sparse_retrieval&amp;useparsoid=0"><span>Switch to legacy parser</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-coll-print_export" class="vector-menu mw-portlet mw-portlet-coll-print_export"  >
+	<div class="vector-menu-heading">
+		Print/export
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=Special:DownloadAsPdf&amp;page=Learned_sparse_retrieval&amp;action=show-download-screen" title="Download this page as a PDF file"><span>Download as PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=Learned_sparse_retrieval&amp;printable=yes" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-wikibase-otherprojects" class="vector-menu mw-portlet mw-portlet-wikibase-otherprojects"  >
+	<div class="vector-menu-heading">
+		In other projects
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-wikibase" class="wb-otherproject-link wb-otherproject-wikibase-dataitem mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q122363545" title="Structured data on this page hosted by Wikidata [g]" accesskey="g"><span>Wikidata item</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+									</div>
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="vector-column-end no-font-mode-scale">
+					<div class="vector-sticky-pinned-container">
+						<nav class="vector-page-tools-landmark" aria-label="Page tools">
+							<div id="vector-page-tools-pinned-container" class="vector-pinned-container">
+				
+							</div>
+		</nav>
+						<nav class="vector-appearance-landmark" aria-label="Appearance">
+							<div id="vector-appearance-pinned-container" class="vector-pinned-container">
+				<div id="vector-appearance" class="vector-appearance vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-appearance-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="appearance-pinned"
+	data-pinnable-element-id="vector-appearance"
+	data-pinned-container-id="vector-appearance-pinned-container"
+	data-unpinned-container-id="vector-appearance-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Appearance</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-appearance.pin" aria-label="Move Appearance to sidebar">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-appearance.unpin" aria-label="Hide Appearance">hide</button>
+</div>
+
+
+</div>
+
+							</div>
+		</nav>
+					</div>
+				</div>
+				<div id="bodyContent" class="vector-body" aria-labelledby="firstHeading" data-mw-ve-target-container>
+					<div class="vector-body-before-content">
+							<div class="mw-indicators">
+		</div>
+
+						<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>
+					</div>
+					<div id="contentSub"><div id="mw-content-subtitle"><span class="mw-redirectedfrom">(Redirected from <a href="/w/index.php?title=SPLADE&amp;redirect=no" class="mw-redirect" title="SPLADE">SPLADE</a>)</span></div></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content"><div class="mw-subjectpageheader">
+</div><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr" data-mw-parsoid-version="0.24.0.0-alpha18" data-mw-html-version="2.8.0"><section data-mw-section-id="0" id="mwAQ"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none" about="#mwt1" typeof="mw:Transclusion" id="mwAg" data-mw='{"parts":[{"template":{"target":{"wt":"Short description","href":"./Template:Short_description"},"params":{"1":{"wt":"Document search algorithm"}},"i":0}}]}'>Document search algorithm</div><span class="mw-empty-elt" about="#mwt1"><link rel="mw:PageProp/Category" href="./Category:Articles_with_short_description"/><link rel="mw:PageProp/Category" href="./Category:Short_description_matches_Wikidata"/></span><span class="mw-empty-elt" about="#mwt2" typeof="mw:Transclusion" id="mwAw" data-mw='{"parts":[{"template":{"target":{"wt":"Redirect","href":"./Template:Redirect"},"params":{"1":{"wt":"SPLADE"},"2":{"wt":"the eating utensil"},"3":{"wt":"splayd"}},"i":0}}]}'><style data-mw-deduplicate="TemplateStyles:r1368532237" typeof="mw:Extension/templatestyles" about="#mwt3" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Hatnote/styles.css"},"body":{"extsrc":""}}'>.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+.mw-empty-elt+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style></span><div role="note" class="hatnote navigation-not-searchable" about="#mwt2" id="mwBA">"SPLADE" redirects here. For the eating utensil, see <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Splayd" title="Splayd">splayd</a>.</div>
+
+<p id="mwBQ"><b id="mwBg">Learned sparse retrieval (LSR)</b> or <b id="mwBw">sparse neural search</b> is an approach to <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Information_Retrieval" title="Information Retrieval" class="mw-redirect" id="mwCA">Information Retrieval</a> which uses a sparse vector representation of queries and documents.<sup about="#mwt6" class="mw-ref reference" id="cite_ref-1" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-1"}}'><a href="#cite_note-1" id="mwCQ"><span class="mw-reflink-text" id="mwCg"><span class="cite-bracket" id="mwCw">[</span>1<span class="cite-bracket" id="mwDA">]</span></span></a></sup> It borrows techniques both from lexical <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Bag-of-words_model" title="Bag-of-words model" id="mwDQ">bag-of-words</a>  and <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Vector_embedding" title="Vector embedding" class="mw-redirect" id="mwDg">vector embedding</a> algorithms, and is claimed to perform better than either alone. The best-known sparse neural search systems are <b id="mwDw">SPLADE</b><sup about="#mwt9" class="mw-ref reference" id="cite_ref-2" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-2"}}'><a href="#cite_note-2" id="mwEA"><span class="mw-reflink-text" id="mwEQ"><span class="cite-bracket" id="mwEg">[</span>2<span class="cite-bracket" id="mwEw">]</span></span></a></sup> and its successor SPLADE v2.<sup about="#mwt12" class="mw-ref reference" id="cite_ref-:0_3-0" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{"name":":0"},"body":{"id":"mw-reference-text-cite_note-:0-3"}}'><a href="#cite_note-:0-3" id="mwFA"><span class="mw-reflink-text" id="mwFQ"><span class="cite-bracket" id="mwFg">[</span>3<span class="cite-bracket" id="mwFw">]</span></span></a></sup> Others include DeepCT,<sup about="#mwt15" class="mw-ref reference" id="cite_ref-4" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-4"}}'><a href="#cite_note-4" id="mwGA"><span class="mw-reflink-text" id="mwGQ"><span class="cite-bracket" id="mwGg">[</span>4<span class="cite-bracket" id="mwGw">]</span></span></a></sup> uniCOIL,<sup about="#mwt18" class="mw-ref reference" id="cite_ref-5" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-5"}}'><a href="#cite_note-5" id="mwHA"><span class="mw-reflink-text" id="mwHQ"><span class="cite-bracket" id="mwHg">[</span>5<span class="cite-bracket" id="mwHw">]</span></span></a></sup> EPIC,<sup about="#mwt21" class="mw-ref reference" id="cite_ref-6" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-6"}}'><a href="#cite_note-6" id="mwIA"><span class="mw-reflink-text" id="mwIQ"><span class="cite-bracket" id="mwIg">[</span>6<span class="cite-bracket" id="mwIw">]</span></span></a></sup> DeepImpact,<sup about="#mwt24" class="mw-ref reference" id="cite_ref-7" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-7"}}'><a href="#cite_note-7" id="mwJA"><span class="mw-reflink-text" id="mwJQ"><span class="cite-bracket" id="mwJg">[</span>7<span class="cite-bracket" id="mwJw">]</span></span></a></sup> TILDE and TILDEv2,<sup about="#mwt27" class="mw-ref reference" id="cite_ref-8" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-8"}}'><a href="#cite_note-8" id="mwKA"><span class="mw-reflink-text" id="mwKQ"><span class="cite-bracket" id="mwKg">[</span>8<span class="cite-bracket" id="mwKw">]</span></span></a></sup> Sparta,<sup about="#mwt30" class="mw-ref reference" id="cite_ref-9" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-9"}}'><a href="#cite_note-9" id="mwLA"><span class="mw-reflink-text" id="mwLQ"><span class="cite-bracket" id="mwLg">[</span>9<span class="cite-bracket" id="mwLw">]</span></span></a></sup> SPLADE-max, and DistilSPLADE-max.<sup about="#mwt31" class="mw-ref reference" id="cite_ref-:0_3-1" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{"name":":0"}}'><a href="#cite_note-:0-3" id="mwMA"><span class="mw-reflink-text" id="mwMQ"><span class="cite-bracket" id="mwMg">[</span>3<span class="cite-bracket" id="mwMw">]</span></span></a></sup></p>
+
+<p id="mwNA"><b id="mwNQ">Multimodal Learned Sparse Retrieval</b>. LSR approaches have also been extended to the vision-language domain, where they are applied to multimodal data, such as the combination of text and images.<sup about="#mwt34" class="mw-ref reference" id="cite_ref-10" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-10"}}'><a href="#cite_note-10" id="mwNg"><span class="mw-reflink-text" id="mwNw"><span class="cite-bracket" id="mwOA">[</span>10<span class="cite-bracket" id="mwOQ">]</span></span></a></sup> This expansion enables the retrieval of relevant content across different modalities, such as finding images based on text queries or vice versa.</p>
+
+<p id="mwOg">Some implementations of SPLADE have similar latency to <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Okapi_BM25" title="Okapi BM25" id="mwOw">Okapi BM25</a> lexical search while giving as good results as state-of-the-art neural rankers on in-domain data.<sup about="#mwt37" class="mw-ref reference" id="cite_ref-11" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-11"}}'><a href="#cite_note-11" id="mwPA"><span class="mw-reflink-text" id="mwPQ"><span class="cite-bracket" id="mwPg">[</span>11<span class="cite-bracket" id="mwPw">]</span></span></a></sup></p>
+
+<p id="mwQA">The Official SPLADE model weights and training code is released under a <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Creative_Commons_NonCommercial_license" title="Creative Commons NonCommercial license" id="mwQQ">Creative Commons NonCommercial license</a>.<sup about="#mwt40" class="mw-ref reference" id="cite_ref-12" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-12"}}'><a href="#cite_note-12" id="mwQg"><span class="mw-reflink-text" id="mwQw"><span class="cite-bracket" id="mwRA">[</span>12<span class="cite-bracket" id="mwRQ">]</span></span></a></sup> But there are other <a rel="mw:ExtLink nofollow" href="https://huggingface.co/prithivida/Splade_PP_en_v1" class="external text" id="mwRg">independent implementations of SPLADE++</a> (a variant of SPLADE models) that are released under permissive licenses. </p>
+
+<p id="mwRw">SPRINT is a toolkit for evaluating neural sparse retrieval systems.<sup about="#mwt43" class="mw-ref reference" id="cite_ref-13" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-13"}}'><a href="#cite_note-13" id="mwSA"><span class="mw-reflink-text" id="mwSQ"><span class="cite-bracket" id="mwSg">[</span>13<span class="cite-bracket" id="mwSw">]</span></span></a></sup></p>
+
+</section><section data-mw-section-id="1" id="mwTA" aria-labelledby="Splade"><div class="mw-heading mw-heading2"><h2 id="Splade">Splade</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit&amp;section=1" title="Edit section: Splade"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p id="mwTQ"><b id="mwTg">SPLADE</b> (Sparse Lexical and Expansion Model) is a neural retrieval model that learns sparse vector representations for queries and documents, combining elements of traditional lexical matching with semantic representations derived from transformer-based architectures.<sup about="#mwt46" class="mw-ref reference" id="cite_ref-:02_14-0" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{"name":":02"},"body":{"id":"mw-reference-text-cite_note-:02-14"}}'><a href="#cite_note-:02-14" id="mwTw"><span class="mw-reflink-text" id="mwUA"><span class="cite-bracket" id="mwUQ">[</span>14<span class="cite-bracket" id="mwUg">]</span></span></a></sup> Unlike dense retrieval models that rely on continuous vector spaces, SPLADE produces sparse outputs that are compatible with <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Inverted_index" title="Inverted index" id="mwUw">inverted index</a> structures commonly used in information retrieval systems.<sup about="#mwt47" class="mw-ref reference" id="cite_ref-:02_14-1" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{"name":":02"}}'><a href="#cite_note-:02-14" id="mwVA"><span class="mw-reflink-text" id="mwVQ"><span class="cite-bracket" id="mwVg">[</span>14<span class="cite-bracket" id="mwVw">]</span></span></a></sup></p>
+
+<p id="mwWA">The original SPLADE model was introduced at the 44th International ACM SIGIR Conference in 2021.<sup about="#mwt48" class="mw-ref reference" id="cite_ref-:02_14-2" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{"name":":02"}}'><a href="#cite_note-:02-14" id="mwWQ"><span class="mw-reflink-text" id="mwWg"><span class="cite-bracket" id="mwWw">[</span>14<span class="cite-bracket" id="mwXA">]</span></span></a></sup> An updated version, SPLADE v2, incorporated modifications to its pooling mechanisms, document expansion strategies, and training objectives using <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Knowledge_distillation" title="Knowledge distillation" id="mwXQ">knowledge distillation</a>. Empirical evaluations have shown improvements on benchmarks such as the TREC Deep Learning 2019 dataset and the BEIR benchmark suite.<sup about="#mwt51" class="mw-ref reference" id="cite_ref-15" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-15"}}'><a href="#cite_note-15" id="mwXg"><span class="mw-reflink-text" id="mwXw"><span class="cite-bracket" id="mwYA">[</span>15<span class="cite-bracket" id="mwYQ">]</span></span></a></sup></p>
+
+<p id="mwYg">These models aim to maintain retrieval efficiency comparable to traditional sparse methods while enhancing <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Semantic_matching" title="Semantic matching" id="mwYw">semantic matching</a> capabilities, offering a balance between effectiveness and computational cost.<sup about="#mwt54" class="mw-ref reference" id="cite_ref-16" rel="dc:references" typeof="mw:Extension/ref" data-mw='{"name":"ref","attrs":{},"body":{"id":"mw-reference-text-cite_note-16"}}'><a href="#cite_note-16" id="mwZA"><span class="mw-reflink-text" id="mwZQ"><span class="cite-bracket" id="mwZg">[</span>16<span class="cite-bracket" id="mwZw">]</span></span></a></sup></p>
+
+</section><section data-mw-section-id="2" id="mwaA" aria-labelledby="External_links"><div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit&amp;section=2" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+
+<ul id="mwaQ"><li id="mwag"><a rel="mw:ExtLink nofollow" href="https://github.com/naver/splade" class="external text" id="mwaw">SPLADE code base at github</a></li></ul>
+
+</section><section data-mw-section-id="3" id="mwbA" aria-labelledby="Notes"><div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Learned_sparse_retrieval&amp;action=edit&amp;section=3" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-references-wrap mw-references-columns" typeof="mw:Extension/references" about="#mwt55" id="mwbQ" data-mw='{"name":"references","attrs":{}}'><ol class="mw-references references" id="mwbg"><li about="#cite_note-1" id="cite_note-1" data-mw-footnote-number="1"><span class="mw-cite-backlink" id="mwbw"><a href="#cite_ref-1" rel="mw:referencedBy" id="mwcA"><span class="mw-linkback-text" id="mwcQ">↑</span></a></span> <span id="mw-reference-text-cite_note-1" class="mw-reference-text reference-text"><style data-mw-deduplicate="TemplateStyles:r1333433106" typeof="mw:Extension/templatestyles mw:Transclusion" about="#mwt4" id="mwcg" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Nguyen"},"first1":{"wt":"Thong"},"last2":{"wt":"MacAvaney"},"first2":{"wt":"Sean"},"last3":{"wt":"Yates"},"first3":{"wt":"Andrew"},"title":{"wt":"Advances in Information Retrieval"},"chapter":{"wt":"A Unified Framework for Learned Sparse Retrieval"},"date":{"wt":"2023"},"editor-last":{"wt":"Kamps"},"editor-first":{"wt":"Jaap"},"editor2-last":{"wt":"Goeuriot"},"editor2-first":{"wt":"Lorraine"},"editor3-last":{"wt":"Crestani"},"editor3-first":{"wt":"Fabio"},"editor4-last":{"wt":"Maistro"},"editor4-first":{"wt":"Maria"},"editor5-last":{"wt":"Joho"},"editor5-first":{"wt":"Hideo"},"editor6-last":{"wt":"Davis"},"editor6-first":{"wt":"Brian"},"editor7-last":{"wt":"Gurrin"},"editor7-first":{"wt":"Cathal"},"editor8-last":{"wt":"Kruschwitz"},"editor8-first":{"wt":"Udo"},"editor9-last":{"wt":"Caputo"},"editor9-first":{"wt":"Annalina"},"chapter-url":{"wt":"https://link.springer.com/chapter/10.1007/978-3-031-28241-6_7"},"series":{"wt":"Lecture Notes in Computer Science"},"volume":{"wt":"13982"},"language":{"wt":"en"},"location":{"wt":"Cham"},"publisher":{"wt":"Springer Nature Switzerland"},"pages":{"wt":"101–116"},"arxiv":{"wt":"2303.13416"},"doi":{"wt":"10.1007/978-3-031-28241-6_7"},"isbn":{"wt":"978-3-031-28241-6"},"s2cid":{"wt":"257585074"}},"i":0}}]}'>.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#bf3c2c)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#bf3c2c)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite id="CITEREFNguyenMacAvaneyYates2023" class="citation book cs1" about="#mwt4">Nguyen, Thong; MacAvaney, Sean; Yates, Andrew (2023). <a rel="mw:ExtLink nofollow" href="https://link.springer.com/chapter/10.1007/978-3-031-28241-6_7" class="external text" id="mwcw">"A Unified Framework for Learned Sparse Retrieval"</a>. In Kamps, Jaap; Goeuriot, Lorraine; Crestani, Fabio; Maistro, Maria; Joho, Hideo; Davis, Brian; Gurrin, Cathal; Kruschwitz, Udo; Caputo, Annalina (eds.). <i id="mwdA">Advances in Information Retrieval</i>. Lecture Notes in Computer Science. Vol.<span typeof="mw:Entity" id="mwdQ"> </span>13982. Cham: Springer Nature Switzerland. pp.<span typeof="mw:Entity" id="mwdg"> </span><span class="nowrap" id="mwdw">101–</span>116. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mweA">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mweQ"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2303.13416" class="external text" id="mweg">2303.13416</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwew">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1007%2F978-3-031-28241-6_7" class="external text" id="mwfA">10.1007/978-3-031-28241-6_7</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwfQ">ISBN</a><span typeof="mw:Entity" id="mwfg"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-3-031-28241-6" title="Special:BookSources/978-3-031-28241-6" id="mwfw"><bdi id="mwgA">978-3-031-28241-6</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mwgQ">S2CID</a><span typeof="mw:Entity" id="mwgg"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:257585074" class="external text" id="mwgw">257585074</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=A+Unified+Framework+for+Learned+Sparse+Retrieval&amp;rft.btitle=Advances+in+Information+Retrieval&amp;rft.place=Cham&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft.pages=101-116&amp;rft.pub=Springer+Nature+Switzerland&amp;rft.date=2023&amp;rft_id=info%3Aarxiv%2F2303.13416&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A257585074%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-031-28241-6_7&amp;rft.isbn=978-3-031-28241-6&amp;rft.aulast=Nguyen&amp;rft.aufirst=Thong&amp;rft.au=MacAvaney%2C+Sean&amp;rft.au=Yates%2C+Andrew&amp;rft_id=https%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-031-28241-6_7&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt4" id="mwhA"></span></span></li>
+<li about="#cite_note-2" id="cite_note-2" data-mw-footnote-number="2"><span class="mw-cite-backlink" id="mwhQ"><a href="#cite_ref-2" rel="mw:referencedBy" id="mwhg"><span class="mw-linkback-text" id="mwhw">↑</span></a></span> <span id="mw-reference-text-cite_note-2" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt7" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwiA" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Formal"},"first1":{"wt":"Thibault"},"last2":{"wt":"Piwowarski"},"first2":{"wt":"Benjamin"},"last3":{"wt":"Clinchant"},"first3":{"wt":"Stéphane"},"title":{"wt":"Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval"},"chapter":{"wt":"SPLADE: Sparse Lexical and Expansion Model for First Stage Ranking"},"date":{"wt":"2021-07-11"},"chapter-url":{"wt":"https://doi.org/10.1145/3404835.3463098"},"series":{"wt":"SIGIR &apos;21"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"Association for Computing Machinery"},"pages":{"wt":"2288–2292"},"arxiv":{"wt":"2107.05720"},"doi":{"wt":"10.1145/3404835.3463098"},"isbn":{"wt":"978-1-4503-8037-9"},"s2cid":{"wt":"235792467"}},"i":0}}]}'/><cite id="CITEREFFormalPiwowarskiClinchant2021" class="citation book cs1" about="#mwt7">Formal, Thibault; Piwowarski, Benjamin; Clinchant, Stéphane (2021-07-11). <a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145/3404835.3463098" class="external text" id="mwiQ">"SPLADE: Sparse Lexical and Expansion Model for First Stage Ranking"</a>. <i id="mwig">Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval</i>. SIGIR '21. New York, NY, USA: Association for Computing Machinery. pp.<span typeof="mw:Entity" id="mwiw"> </span><span class="nowrap" id="mwjA">2288–</span>2292. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwjQ">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwjg"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2107.05720" class="external text" id="mwjw">2107.05720</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwkA">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3404835.3463098" class="external text" id="mwkQ">10.1145/3404835.3463098</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwkg">ISBN</a><span typeof="mw:Entity" id="mwkw"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-8037-9" title="Special:BookSources/978-1-4503-8037-9" id="mwlA"><bdi id="mwlQ">978-1-4503-8037-9</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mwlg">S2CID</a><span typeof="mw:Entity" id="mwlw"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:235792467" class="external text" id="mwmA">235792467</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=SPLADE%3A+Sparse+Lexical+and+Expansion+Model+for+First+Stage+Ranking&amp;rft.btitle=Proceedings+of+the+44th+International+ACM+SIGIR+Conference+on+Research+and+Development+in+Information+Retrieval&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.series=SIGIR+%2721&amp;rft.pages=2288-2292&amp;rft.pub=Association+for+Computing+Machinery&amp;rft.date=2021-07-11&amp;rft_id=info%3Aarxiv%2F2107.05720&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A235792467%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3404835.3463098&amp;rft.isbn=978-1-4503-8037-9&amp;rft.aulast=Formal&amp;rft.aufirst=Thibault&amp;rft.au=Piwowarski%2C+Benjamin&amp;rft.au=Clinchant%2C+St%C3%A9phane&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%2F3404835.3463098&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt7" id="mwmQ"></span></span></li>
+<li about="#cite_note-:0-3" id="cite_note-:0-3" data-mw-footnote-number="3"><span rel="mw:referencedBy" class="mw-cite-backlink" id="mwmg"><a href="#cite_ref-:0_3-0" id="mwmw"><span class="mw-linkback-text" id="mwnA">1</span></a> <a href="#cite_ref-:0_3-1" id="mwnQ"><span class="mw-linkback-text" id="mwng">2</span></a></span> <span id="mw-reference-text-cite_note-:0-3" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt10" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwnw" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"last1":{"wt":"Formal"},"first1":{"wt":"Thibault"},"last2":{"wt":"Piworwarski"},"first2":{"wt":"Benjamin"},"last3":{"wt":"Lassance"},"first3":{"wt":"Carlos"},"last4":{"wt":"Clinchant"},"first4":{"wt":"Stéphane"},"date":{"wt":"21 September 2021"},"title":{"wt":"SPLADE v2: Sparse Lexical and Expansion Model for Information Retrieval"},"class":{"wt":"cs.IR"},"eprint":{"wt":"2109.10086v1"}},"i":0}}]}'/><cite id="CITEREFFormalPiworwarskiLassanceClinchant2021" class="citation arxiv cs1" about="#mwt10">Formal, Thibault; Piworwarski, Benjamin; Lassance, Carlos; Clinchant, Stéphane (21 September 2021). "SPLADE v2: Sparse Lexical and Expansion Model for Information Retrieval". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwoA">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwoQ"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2109.10086v1" class="external text" id="mwog">2109.10086v1</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.IR" class="external text" id="mwow">cs.IR</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=SPLADE+v2%3A+Sparse+Lexical+and+Expansion+Model+for+Information+Retrieval&amp;rft.date=2021-09-21&amp;rft_id=info%3Aarxiv%2F2109.10086v1&amp;rft.aulast=Formal&amp;rft.aufirst=Thibault&amp;rft.au=Piworwarski%2C+Benjamin&amp;rft.au=Lassance%2C+Carlos&amp;rft.au=Clinchant%2C+St%C3%A9phane&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt10" id="mwpA"></span></span></li>
+<li about="#cite_note-4" id="cite_note-4" data-mw-footnote-number="4"><span class="mw-cite-backlink" id="mwpQ"><a href="#cite_ref-4" rel="mw:referencedBy" id="mwpg"><span class="mw-linkback-text" id="mwpw">↑</span></a></span> <span id="mw-reference-text-cite_note-4" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt13" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwqA" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Dai"},"first1":{"wt":"Zhuyun"},"last2":{"wt":"Callan"},"first2":{"wt":"Jamie"},"title":{"wt":"Proceedings of the Web Conference 2020"},"chapter":{"wt":"Context-Aware Document Term Weighting for Ad-Hoc Search"},"date":{"wt":"2020-04-20"},"pages":{"wt":"1897–1907"},"chapter-url":{"wt":"http://dx.doi.org/10.1145/3366423.3380258"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"ACM"},"doi":{"wt":"10.1145/3366423.3380258"},"isbn":{"wt":"9781450370233"},"s2cid":{"wt":"218521094"}},"i":0}}]}'/><cite id="CITEREFDaiCallan2020" class="citation book cs1" about="#mwt13">Dai, Zhuyun; Callan, Jamie (2020-04-20). <a rel="mw:ExtLink nofollow" href="https://dx.doi.org/10.1145/3366423.3380258" class="external text" data-mw-original-href="http://dx.doi.org/10.1145/3366423.3380258" id="mwqQ">"Context-Aware Document Term Weighting for Ad-Hoc Search"</a>. <i id="mwqg">Proceedings of the Web Conference 2020</i>. New York, NY, USA: ACM. pp.<span typeof="mw:Entity" id="mwqw"> </span><span class="nowrap" id="mwrA">1897–</span>1907. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwrQ">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3366423.3380258" class="external text" id="mwrg">10.1145/3366423.3380258</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwrw">ISBN</a><span typeof="mw:Entity" id="mwsA"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/9781450370233" title="Special:BookSources/9781450370233" id="mwsQ"><bdi id="mwsg">9781450370233</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mwsw">S2CID</a><span typeof="mw:Entity" id="mwtA"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:218521094" class="external text" id="mwtQ">218521094</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Context-Aware+Document+Term+Weighting+for+Ad-Hoc+Search&amp;rft.btitle=Proceedings+of+the+Web+Conference+2020&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.pages=1897-1907&amp;rft.pub=ACM&amp;rft.date=2020-04-20&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A218521094%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3366423.3380258&amp;rft.isbn=9781450370233&amp;rft.aulast=Dai&amp;rft.aufirst=Zhuyun&amp;rft.au=Callan%2C+Jamie&amp;rft_id=http%3A%2F%2Fdx.doi.org%2F10.1145%2F3366423.3380258&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt13" id="mwtg"></span></span></li>
+<li about="#cite_note-5" id="cite_note-5" data-mw-footnote-number="5"><span class="mw-cite-backlink" id="mwtw"><a href="#cite_ref-5" rel="mw:referencedBy" id="mwuA"><span class="mw-linkback-text" id="mwuQ">↑</span></a></span> <span id="mw-reference-text-cite_note-5" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt16" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwug" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"last1":{"wt":"Lin"},"first1":{"wt":"Jimmy"},"last2":{"wt":"Ma"},"first2":{"wt":"Xueguang"},"date":{"wt":"28 June 2021"},"title":{"wt":"A few brief notes on DeepImpact, COIL, and a conceptual framework for information retrieval techniques"},"class":{"wt":"cs.IR"},"eprint":{"wt":"2106.14807"}},"i":0}}]}'/><cite id="CITEREFLinMa2021" class="citation arxiv cs1" about="#mwt16">Lin, Jimmy; Ma, Xueguang (28 June 2021). "A few brief notes on DeepImpact, COIL, and a conceptual framework for information retrieval techniques". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwuw">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwvA"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2106.14807" class="external text" id="mwvQ">2106.14807</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.IR" class="external text" id="mwvg">cs.IR</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=A+few+brief+notes+on+DeepImpact%2C+COIL%2C+and+a+conceptual+framework+for+information+retrieval+techniques&amp;rft.date=2021-06-28&amp;rft_id=info%3Aarxiv%2F2106.14807&amp;rft.aulast=Lin&amp;rft.aufirst=Jimmy&amp;rft.au=Ma%2C+Xueguang&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt16" id="mwvw"></span></span></li>
+<li about="#cite_note-6" id="cite_note-6" data-mw-footnote-number="6"><span class="mw-cite-backlink" id="mwwA"><a href="#cite_ref-6" rel="mw:referencedBy" id="mwwQ"><span class="mw-linkback-text" id="mwwg">↑</span></a></span> <span id="mw-reference-text-cite_note-6" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt19" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwww" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"MacAvaney"},"first1":{"wt":"Sean"},"last2":{"wt":"Nardini"},"first2":{"wt":"Franco Maria"},"last3":{"wt":"Perego"},"first3":{"wt":"Raffaele"},"last4":{"wt":"Tonellotto"},"first4":{"wt":"Nicola"},"last5":{"wt":"Goharian"},"first5":{"wt":"Nazli"},"last6":{"wt":"Frieder"},"first6":{"wt":"Ophir"},"title":{"wt":"Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval"},"chapter":{"wt":"Expansion via Prediction of Importance with Contextualization"},"date":{"wt":"2020-07-25"},"chapter-url":{"wt":"https://doi.org/10.1145/3397271.3401262"},"series":{"wt":"SIGIR &apos;20"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"Association for Computing Machinery"},"pages":{"wt":"1573–1576"},"arxiv":{"wt":"2004.14245"},"doi":{"wt":"10.1145/3397271.3401262"},"isbn":{"wt":"978-1-4503-8016-4"},"s2cid":{"wt":"216641912"}},"i":0}}]}'/><cite id="CITEREFMacAvaneyNardiniPeregoTonellotto2020" class="citation book cs1" about="#mwt19">MacAvaney, Sean; Nardini, Franco Maria; Perego, Raffaele; Tonellotto, Nicola; Goharian, Nazli; Frieder, Ophir (2020-07-25). <a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145/3397271.3401262" class="external text" id="mwxA">"Expansion via Prediction of Importance with Contextualization"</a>. <i id="mwxQ">Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval</i>. SIGIR '20. New York, NY, USA: Association for Computing Machinery. pp.<span typeof="mw:Entity" id="mwxg"> </span><span class="nowrap" id="mwxw">1573–</span>1576. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwyA">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwyQ"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2004.14245" class="external text" id="mwyg">2004.14245</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwyw">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3397271.3401262" class="external text" id="mwzA">10.1145/3397271.3401262</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwzQ">ISBN</a><span typeof="mw:Entity" id="mwzg"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-8016-4" title="Special:BookSources/978-1-4503-8016-4" id="mwzw"><bdi id="mw0A">978-1-4503-8016-4</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mw0Q">S2CID</a><span typeof="mw:Entity" id="mw0g"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:216641912" class="external text" id="mw0w">216641912</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Expansion+via+Prediction+of+Importance+with+Contextualization&amp;rft.btitle=Proceedings+of+the+43rd+International+ACM+SIGIR+Conference+on+Research+and+Development+in+Information+Retrieval&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.series=SIGIR+%2720&amp;rft.pages=1573-1576&amp;rft.pub=Association+for+Computing+Machinery&amp;rft.date=2020-07-25&amp;rft_id=info%3Aarxiv%2F2004.14245&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A216641912%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3397271.3401262&amp;rft.isbn=978-1-4503-8016-4&amp;rft.aulast=MacAvaney&amp;rft.aufirst=Sean&amp;rft.au=Nardini%2C+Franco+Maria&amp;rft.au=Perego%2C+Raffaele&amp;rft.au=Tonellotto%2C+Nicola&amp;rft.au=Goharian%2C+Nazli&amp;rft.au=Frieder%2C+Ophir&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%2F3397271.3401262&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt19" id="mw1A"></span></span></li>
+<li about="#cite_note-7" id="cite_note-7" data-mw-footnote-number="7"><span class="mw-cite-backlink" id="mw1Q"><a href="#cite_ref-7" rel="mw:referencedBy" id="mw1g"><span class="mw-linkback-text" id="mw1w">↑</span></a></span> <span id="mw-reference-text-cite_note-7" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt22" typeof="mw:Extension/templatestyles mw:Transclusion" id="mw2A" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Mallia"},"first1":{"wt":"Antonio"},"last2":{"wt":"Khattab"},"first2":{"wt":"Omar"},"last3":{"wt":"Suel"},"first3":{"wt":"Torsten"},"last4":{"wt":"Tonellotto"},"first4":{"wt":"Nicola"},"title":{"wt":"Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval"},"chapter":{"wt":"Learning Passage Impacts for Inverted Indexes"},"date":{"wt":"2021-07-11"},"chapter-url":{"wt":"https://dl.acm.org/doi/10.1145/3404835.3463030"},"series":{"wt":"SIGIR &apos;21"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"Association for Computing Machinery"},"pages":{"wt":"1723–1727"},"arxiv":{"wt":"2104.12016"},"doi":{"wt":"10.1145/3404835.3463030"},"isbn":{"wt":"978-1-4503-8037-9"},"s2cid":{"wt":"233394068"}},"i":0}}]}'/><cite id="CITEREFMalliaKhattabSuelTonellotto2021" class="citation book cs1" about="#mwt22">Mallia, Antonio; Khattab, Omar; Suel, Torsten; Tonellotto, Nicola (2021-07-11). <a rel="mw:ExtLink nofollow" href="https://dl.acm.org/doi/10.1145/3404835.3463030" class="external text" id="mw2Q">"Learning Passage Impacts for Inverted Indexes"</a>. <i id="mw2g">Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval</i>. SIGIR '21. New York, NY, USA: Association for Computing Machinery. pp.<span typeof="mw:Entity" id="mw2w"> </span><span class="nowrap" id="mw3A">1723–</span>1727. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mw3Q">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mw3g"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2104.12016" class="external text" id="mw3w">2104.12016</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mw4A">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3404835.3463030" class="external text" id="mw4Q">10.1145/3404835.3463030</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mw4g">ISBN</a><span typeof="mw:Entity" id="mw4w"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-8037-9" title="Special:BookSources/978-1-4503-8037-9" id="mw5A"><bdi id="mw5Q">978-1-4503-8037-9</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mw5g">S2CID</a><span typeof="mw:Entity" id="mw5w"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:233394068" class="external text" id="mw6A">233394068</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Learning+Passage+Impacts+for+Inverted+Indexes&amp;rft.btitle=Proceedings+of+the+44th+International+ACM+SIGIR+Conference+on+Research+and+Development+in+Information+Retrieval&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.series=SIGIR+%2721&amp;rft.pages=1723-1727&amp;rft.pub=Association+for+Computing+Machinery&amp;rft.date=2021-07-11&amp;rft_id=info%3Aarxiv%2F2104.12016&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A233394068%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3404835.3463030&amp;rft.isbn=978-1-4503-8037-9&amp;rft.aulast=Mallia&amp;rft.aufirst=Antonio&amp;rft.au=Khattab%2C+Omar&amp;rft.au=Suel%2C+Torsten&amp;rft.au=Tonellotto%2C+Nicola&amp;rft_id=https%3A%2F%2Fdl.acm.org%2Fdoi%2F10.1145%2F3404835.3463030&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt22" id="mw6Q"></span></span></li>
+<li about="#cite_note-8" id="cite_note-8" data-mw-footnote-number="8"><span class="mw-cite-backlink" id="mw6g"><a href="#cite_ref-8" rel="mw:referencedBy" id="mw6w"><span class="mw-linkback-text" id="mw7A">↑</span></a></span> <span id="mw-reference-text-cite_note-8" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt25" typeof="mw:Extension/templatestyles mw:Transclusion" id="mw7Q" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"last1":{"wt":"Zhuang"},"first1":{"wt":"Shengyao"},"last2":{"wt":"Zuccon"},"first2":{"wt":"Guido"},"date":{"wt":"13 September 2021"},"title":{"wt":"Fast Passage Re-ranking with Contextualized Exact Term Matching and Efficient Passage Expansion"},"class":{"wt":"cs.IR"},"eprint":{"wt":"2108.08513"}},"i":0}}]}'/><cite id="CITEREFZhuangZuccon2021" class="citation arxiv cs1" about="#mwt25">Zhuang, Shengyao; Zuccon, Guido (13 September 2021). "Fast Passage Re-ranking with Contextualized Exact Term Matching and Efficient Passage Expansion". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mw7g">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mw7w"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2108.08513" class="external text" id="mw8A">2108.08513</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.IR" class="external text" id="mw8Q">cs.IR</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=Fast+Passage+Re-ranking+with+Contextualized+Exact+Term+Matching+and+Efficient+Passage+Expansion&amp;rft.date=2021-09-13&amp;rft_id=info%3Aarxiv%2F2108.08513&amp;rft.aulast=Zhuang&amp;rft.aufirst=Shengyao&amp;rft.au=Zuccon%2C+Guido&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt25" id="mw8g"></span></span></li>
+<li about="#cite_note-9" id="cite_note-9" data-mw-footnote-number="9"><span class="mw-cite-backlink" id="mw8w"><a href="#cite_ref-9" rel="mw:referencedBy" id="mw9A"><span class="mw-linkback-text" id="mw9Q">↑</span></a></span> <span id="mw-reference-text-cite_note-9" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt28" typeof="mw:Extension/templatestyles mw:Transclusion" id="mw9g" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"last1":{"wt":"Zhao"},"first1":{"wt":"Tiancheng"},"last2":{"wt":"Lu"},"first2":{"wt":"Xiaopeng"},"last3":{"wt":"Lee"},"first3":{"wt":"Kyusong"},"date":{"wt":"28 September 2020"},"title":{"wt":"SPARTA: Efficient Open-Domain Question Answering via Sparse Transformer Matching Retrieval"},"class":{"wt":"cs.CL"},"eprint":{"wt":"2009.13013"}},"i":0}}]}'/><cite id="CITEREFZhaoLuLee2020" class="citation arxiv cs1" about="#mwt28">Zhao, Tiancheng; Lu, Xiaopeng; Lee, Kyusong (28 September 2020). "SPARTA: Efficient Open-Domain Question Answering via Sparse Transformer Matching Retrieval". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mw9w">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mw-A"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2009.13013" class="external text" id="mw-Q">2009.13013</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.CL" class="external text" id="mw-g">cs.CL</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=SPARTA%3A+Efficient+Open-Domain+Question+Answering+via+Sparse+Transformer+Matching+Retrieval&amp;rft.date=2020-09-28&amp;rft_id=info%3Aarxiv%2F2009.13013&amp;rft.aulast=Zhao&amp;rft.aufirst=Tiancheng&amp;rft.au=Lu%2C+Xiaopeng&amp;rft.au=Lee%2C+Kyusong&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt28" id="mw-w"></span></span></li>
+<li about="#cite_note-10" id="cite_note-10" data-mw-footnote-number="10"><span class="mw-cite-backlink" id="mw_A"><a href="#cite_ref-10" rel="mw:referencedBy" id="mw_Q"><span class="mw-linkback-text" id="mw_g">↑</span></a></span> <span id="mw-reference-text-cite_note-10" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt32" typeof="mw:Extension/templatestyles mw:Transclusion" id="mw_w" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Nguyen"},"first1":{"wt":"Thong"},"last2":{"wt":"Hendriksen"},"first2":{"wt":"Mariya"},"last3":{"wt":"Yates"},"first3":{"wt":"Andrew"},"last4":{"wt":"de Rijke"},"first4":{"wt":"Maarten"},"title":{"wt":"European Conference on Information Retrieval"},"chapter":{"wt":"Multimodal Learned Sparse Retrieval with Probabilistic Expansion Control"},"date":{"wt":"2024"},"location":{"wt":"Cham"},"publisher":{"wt":"Springer Nature Switzerland"},"pages":{"wt":"448–464"}},"i":0}}]}'/><cite id="CITEREFNguyenHendriksenYatesde_Rijke2024" class="citation book cs1" about="#mwt32">Nguyen, Thong; Hendriksen, Mariya; Yates, Andrew; de Rijke, Maarten (2024). "Multimodal Learned Sparse Retrieval with Probabilistic Expansion Control". <i id="mwAQA">European Conference on Information Retrieval</i>. Cham: Springer Nature Switzerland. pp.<span typeof="mw:Entity" id="mwAQE"> </span><span class="nowrap" id="mwAQI">448–</span>464.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Multimodal+Learned+Sparse+Retrieval+with+Probabilistic+Expansion+Control&amp;rft.btitle=European+Conference+on+Information+Retrieval&amp;rft.place=Cham&amp;rft.pages=448-464&amp;rft.pub=Springer+Nature+Switzerland&amp;rft.date=2024&amp;rft.aulast=Nguyen&amp;rft.aufirst=Thong&amp;rft.au=Hendriksen%2C+Mariya&amp;rft.au=Yates%2C+Andrew&amp;rft.au=de+Rijke%2C+Maarten&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt32" id="mwAQM"></span></span></li>
+<li about="#cite_note-11" id="cite_note-11" data-mw-footnote-number="11"><span class="mw-cite-backlink" id="mwAQQ"><a href="#cite_ref-11" rel="mw:referencedBy" id="mwAQU"><span class="mw-linkback-text" id="mwAQY">↑</span></a></span> <span id="mw-reference-text-cite_note-11" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt35" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwAQc" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Lassance"},"first1":{"wt":"Carlos"},"last2":{"wt":"Clinchant"},"first2":{"wt":"Stéphane"},"title":{"wt":"Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval"},"chapter":{"wt":"An Efficiency Study for SPLADE Models"},"date":{"wt":"2022-07-07"},"chapter-url":{"wt":"https://doi.org/10.1145/3477495.3531833"},"series":{"wt":"SIGIR &apos;22"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"Association for Computing Machinery"},"pages":{"wt":"2220–2226"},"arxiv":{"wt":"2207.03834"},"doi":{"wt":"10.1145/3477495.3531833"},"isbn":{"wt":"978-1-4503-8732-3"},"s2cid":{"wt":"250340284"}},"i":0}}]}'/><cite id="CITEREFLassanceClinchant2022" class="citation book cs1" about="#mwt35">Lassance, Carlos; Clinchant, Stéphane (2022-07-07). <a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145/3477495.3531833" class="external text" id="mwAQg">"An Efficiency Study for SPLADE Models"</a>. <i id="mwAQk">Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval</i>. SIGIR '22. New York, NY, USA: Association for Computing Machinery. pp.<span typeof="mw:Entity" id="mwAQo"> </span><span class="nowrap" id="mwAQs">2220–</span>2226. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwAQw">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwAQ0"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2207.03834" class="external text" id="mwAQ4">2207.03834</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwAQ8">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3477495.3531833" class="external text" id="mwARA">10.1145/3477495.3531833</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwARE">ISBN</a><span typeof="mw:Entity" id="mwARI"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-8732-3" title="Special:BookSources/978-1-4503-8732-3" id="mwARM"><bdi id="mwARQ">978-1-4503-8732-3</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mwARU">S2CID</a><span typeof="mw:Entity" id="mwARY"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:250340284" class="external text" id="mwARc">250340284</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=An+Efficiency+Study+for+SPLADE+Models&amp;rft.btitle=Proceedings+of+the+45th+International+ACM+SIGIR+Conference+on+Research+and+Development+in+Information+Retrieval&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.series=SIGIR+%2722&amp;rft.pages=2220-2226&amp;rft.pub=Association+for+Computing+Machinery&amp;rft.date=2022-07-07&amp;rft_id=info%3Aarxiv%2F2207.03834&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A250340284%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3477495.3531833&amp;rft.isbn=978-1-4503-8732-3&amp;rft.aulast=Lassance&amp;rft.aufirst=Carlos&amp;rft.au=Clinchant%2C+St%C3%A9phane&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%2F3477495.3531833&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt35" id="mwARg"></span></span></li>
+<li about="#cite_note-12" id="cite_note-12" data-mw-footnote-number="12"><span class="mw-cite-backlink" id="mwARk"><a href="#cite_ref-12" rel="mw:referencedBy" id="mwARo"><span class="mw-linkback-text" id="mwARs">↑</span></a></span> <span id="mw-reference-text-cite_note-12" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt38" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwARw" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite web ","href":"./Template:Cite_web"},"params":{"title":{"wt":"splade/LICENSE at main · naver/splade"},"url":{"wt":"https://github.com/naver/splade/blob/main/LICENSE"},"access-date":{"wt":"2023-08-25"},"website":{"wt":"GitHub"},"language":{"wt":"en"}},"i":0}}]}'/><cite class="citation web cs1" about="#mwt38" id="mwAR0"><a rel="mw:ExtLink nofollow" href="https://github.com/naver/splade/blob/main/LICENSE" class="external text" id="mwAR4">"splade/LICENSE at main · naver/splade"</a>. <i id="mwAR8">GitHub</i><span class="reference-accessdate" id="mwASA">. Retrieved <span class="nowrap" id="mwASE">2023-08-25</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=GitHub&amp;rft.atitle=splade%2FLICENSE+at+main+%C2%B7+naver%2Fsplade&amp;rft_id=https%3A%2F%2Fgithub.com%2Fnaver%2Fsplade%2Fblob%2Fmain%2FLICENSE&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt38" id="mwASI"></span></span></li>
+<li about="#cite_note-13" id="cite_note-13" data-mw-footnote-number="13"><span class="mw-cite-backlink" id="mwASM"><a href="#cite_ref-13" rel="mw:referencedBy" id="mwASQ"><span class="mw-linkback-text" id="mwASU">↑</span></a></span> <span id="mw-reference-text-cite_note-13" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt41" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwASY" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite book ","href":"./Template:Cite_book"},"params":{"last1":{"wt":"Thakur"},"first1":{"wt":"Nandan"},"last2":{"wt":"Wang"},"first2":{"wt":"Kexin"},"last3":{"wt":"Gurevych"},"first3":{"wt":"Iryna"},"last4":{"wt":"Lin"},"first4":{"wt":"Jimmy"},"title":{"wt":"Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval"},"chapter":{"wt":"SPRINT: A Unified Toolkit for Evaluating and Demystifying Zero-shot Neural Sparse Retrieval"},"date":{"wt":"2023-07-18"},"chapter-url":{"wt":"https://doi.org/10.1145/3539618.3591902"},"series":{"wt":"SIGIR &apos;23"},"location":{"wt":"New York, NY, USA"},"publisher":{"wt":"Association for Computing Machinery"},"pages":{"wt":"2964–2974"},"arxiv":{"wt":"2307.10488"},"doi":{"wt":"10.1145/3539618.3591902"},"isbn":{"wt":"978-1-4503-9408-6"},"s2cid":{"wt":"259949923"}},"i":0}}]}'/><cite id="CITEREFThakurWangGurevychLin2023" class="citation book cs1" about="#mwt41">Thakur, Nandan; Wang, Kexin; Gurevych, Iryna; Lin, Jimmy (2023-07-18). <a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145/3539618.3591902" class="external text" id="mwASc">"SPRINT: A Unified Toolkit for Evaluating and Demystifying Zero-shot Neural Sparse Retrieval"</a>. <i id="mwASg">Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval</i>. SIGIR '23. New York, NY, USA: Association for Computing Machinery. pp.<span typeof="mw:Entity" id="mwASk"> </span><span class="nowrap" id="mwASo">2964–</span>2974. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwASs">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwASw"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2307.10488" class="external text" id="mwAS0">2307.10488</a></span>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwAS4">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3539618.3591902" class="external text" id="mwAS8">10.1145/3539618.3591902</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)" class="mw-redirect" id="mwATA">ISBN</a><span typeof="mw:Entity" id="mwATE"> </span><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-4503-9408-6" title="Special:BookSources/978-1-4503-9408-6" id="mwATI"><bdi id="mwATM">978-1-4503-9408-6</bdi></a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/S2CID_(identifier)" title="S2CID (identifier)" class="mw-redirect" id="mwATQ">S2CID</a><span typeof="mw:Entity" id="mwATU"> </span><a rel="mw:ExtLink nofollow" href="https://api.semanticscholar.org/CorpusID:259949923" class="external text" id="mwATY">259949923</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=SPRINT%3A+A+Unified+Toolkit+for+Evaluating+and+Demystifying+Zero-shot+Neural+Sparse+Retrieval&amp;rft.btitle=Proceedings+of+the+46th+International+ACM+SIGIR+Conference+on+Research+and+Development+in+Information+Retrieval&amp;rft.place=New+York%2C+NY%2C+USA&amp;rft.series=SIGIR+%2723&amp;rft.pages=2964-2974&amp;rft.pub=Association+for+Computing+Machinery&amp;rft.date=2023-07-18&amp;rft_id=info%3Aarxiv%2F2307.10488&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A259949923%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1145%2F3539618.3591902&amp;rft.isbn=978-1-4503-9408-6&amp;rft.aulast=Thakur&amp;rft.aufirst=Nandan&amp;rft.au=Wang%2C+Kexin&amp;rft.au=Gurevych%2C+Iryna&amp;rft.au=Lin%2C+Jimmy&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%2F3539618.3591902&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt41" id="mwATc"></span></span></li>
+<li about="#cite_note-:02-14" id="cite_note-:02-14" data-mw-footnote-number="14"><span rel="mw:referencedBy" class="mw-cite-backlink" id="mwATg"><a href="#cite_ref-:02_14-0" id="mwATk"><span class="mw-linkback-text" id="mwATo">1</span></a> <a href="#cite_ref-:02_14-1" id="mwATs"><span class="mw-linkback-text" id="mwATw">2</span></a> <a href="#cite_ref-:02_14-2" id="mwAT0"><span class="mw-linkback-text" id="mwAT4">3</span></a></span> <span id="mw-reference-text-cite_note-:02-14" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt44" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwAT8" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"eprint":{"wt":"2109.10086"},"last1":{"wt":"Formal"},"first1":{"wt":"Thibault"},"last2":{"wt":"Lassance"},"first2":{"wt":"Carlos"},"last3":{"wt":"Piwowarski"},"first3":{"wt":"Benjamin"},"last4":{"wt":"Clinchant"},"first4":{"wt":"Stéphane"},"title":{"wt":"SPLADE v2: Sparse Lexical and Expansion Model for Information Retrieval"},"date":{"wt":"2021"},"class":{"wt":"cs.IR"}},"i":0}}]}'/><cite id="CITEREFFormalLassancePiwowarskiClinchant2021" class="citation arxiv cs1" about="#mwt44">Formal, Thibault; Lassance, Carlos; Piwowarski, Benjamin; Clinchant, Stéphane (2021). "SPLADE v2: Sparse Lexical and Expansion Model for Information Retrieval". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwAUA">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwAUE"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2109.10086" class="external text" id="mwAUI">2109.10086</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.IR" class="external text" id="mwAUM">cs.IR</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=SPLADE+v2%3A+Sparse+Lexical+and+Expansion+Model+for+Information+Retrieval&amp;rft.date=2021&amp;rft_id=info%3Aarxiv%2F2109.10086&amp;rft.aulast=Formal&amp;rft.aufirst=Thibault&amp;rft.au=Lassance%2C+Carlos&amp;rft.au=Piwowarski%2C+Benjamin&amp;rft.au=Clinchant%2C+St%C3%A9phane&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt44" id="mwAUQ"></span></span></li>
+<li about="#cite_note-15" id="cite_note-15" data-mw-footnote-number="15"><span class="mw-cite-backlink" id="mwAUU"><a href="#cite_ref-15" rel="mw:referencedBy" id="mwAUY"><span class="mw-linkback-text" id="mwAUc">↑</span></a></span> <span id="mw-reference-text-cite_note-15" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt49" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwAUg" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"cite arXiv ","href":"./Template:Cite_arXiv"},"params":{"eprint":{"wt":"2104.08663"},"last1":{"wt":"Thakur"},"first1":{"wt":"Nandan"},"last2":{"wt":"Reimers"},"first2":{"wt":"Nils"},"last3":{"wt":"Rücklé"},"first3":{"wt":"Andreas"},"last4":{"wt":"Srivastava"},"first4":{"wt":"Abhishek"},"last5":{"wt":"Gurevych"},"first5":{"wt":"Iryna"},"title":{"wt":"BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models"},"date":{"wt":"2021"},"class":{"wt":"cs.IR"}},"i":0}}]}'/><cite id="CITEREFThakurReimersRückléSrivastava2021" class="citation arxiv cs1" about="#mwt49">Thakur, Nandan; Reimers, Nils; Rücklé, Andreas; Srivastava, Abhishek; Gurevych, Iryna (2021). "BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models". <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ArXiv_(identifier)" title="ArXiv (identifier)" class="mw-redirect" id="mwAUk">arXiv</a>:<span class="id-lock-free" title="Freely accessible" id="mwAUo"><a rel="mw:ExtLink nofollow" href="https://arxiv.org/abs/2104.08663" class="external text" id="mwAUs">2104.08663</a></span> [<a rel="mw:ExtLink nofollow" href="https://arxiv.org/archive/cs.IR" class="external text" id="mwAUw">cs.IR</a>].</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=preprint&amp;rft.jtitle=arXiv&amp;rft.atitle=BEIR%3A+A+Heterogenous+Benchmark+for+Zero-shot+Evaluation+of+Information+Retrieval+Models&amp;rft.date=2021&amp;rft_id=info%3Aarxiv%2F2104.08663&amp;rft.aulast=Thakur&amp;rft.aufirst=Nandan&amp;rft.au=Reimers%2C+Nils&amp;rft.au=R%C3%BCckl%C3%A9%2C+Andreas&amp;rft.au=Srivastava%2C+Abhishek&amp;rft.au=Gurevych%2C+Iryna&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt49" id="mwAU0"></span></span></li>
+<li about="#cite_note-16" id="cite_note-16" data-mw-footnote-number="16"><span class="mw-cite-backlink" id="mwAU4"><a href="#cite_ref-16" rel="mw:referencedBy" id="mwAU8"><span class="mw-linkback-text" id="mwAVA">↑</span></a></span> <span id="mw-reference-text-cite_note-16" class="mw-reference-text reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333433106" about="#mwt52" typeof="mw:Extension/templatestyles mw:Transclusion" id="mwAVE" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Citation/CS1/styles.css"},"body":{"extsrc":""},"parts":[{"template":{"target":{"wt":"Cite journal ","href":"./Template:Cite_journal"},"params":{"last1":{"wt":"Formal"},"first1":{"wt":"Thibault"},"last2":{"wt":"Lassance"},"first2":{"wt":"Carlos"},"last3":{"wt":"Piwowarski"},"first3":{"wt":"Benjamin"},"last4":{"wt":"Clinchant"},"first4":{"wt":"Stéphane"},"date":{"wt":"2024-04-29"},"title":{"wt":"Towards Effective and Efficient Sparse Neural Information Retrieval"},"url":{"wt":"https://dl.acm.org/doi/full/10.1145/3634912"},"journal":{"wt":"ACM Trans. Inf. Syst."},"volume":{"wt":"42"},"issue":{"wt":"5"},"pages":{"wt":"116:1–116:46"},"doi":{"wt":"10.1145/3634912"},"issn":{"wt":"1046-8188"}},"i":0}}]}'/><cite id="CITEREFFormalLassancePiwowarskiClinchant2024" class="citation journal cs1" about="#mwt52">Formal, Thibault; Lassance, Carlos; Piwowarski, Benjamin; Clinchant, Stéphane (2024-04-29). <a rel="mw:ExtLink nofollow" href="https://dl.acm.org/doi/full/10.1145/3634912" class="external text" id="mwAVI">"Towards Effective and Efficient Sparse Neural Information Retrieval"</a>. <i id="mwAVM">ACM Trans. Inf. Syst</i>. <b id="mwAVQ">42</b> (5): 116:1–116:46. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Doi_(identifier)" title="Doi (identifier)" class="mw-redirect" id="mwAVU">doi</a>:<a rel="mw:ExtLink nofollow" href="https://doi.org/10.1145%2F3634912" class="external text" id="mwAVY">10.1145/3634912</a>. <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/ISSN_(identifier)" title="ISSN (identifier)" class="mw-redirect" id="mwAVc">ISSN</a><span typeof="mw:Entity" id="mwAVg"> </span><a rel="mw:ExtLink nofollow" href="https://search.worldcat.org/issn/1046-8188" class="external text" id="mwAVk">1046-8188</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=ACM+Trans.+Inf.+Syst.&amp;rft.atitle=Towards+Effective+and+Efficient+Sparse+Neural+Information+Retrieval&amp;rft.volume=42&amp;rft.issue=5&amp;rft.pages=116%3A1-116%3A46&amp;rft.date=2024-04-29&amp;rft_id=info%3Adoi%2F10.1145%2F3634912&amp;rft.issn=1046-8188&amp;rft.aulast=Formal&amp;rft.aufirst=Thibault&amp;rft.au=Lassance%2C+Carlos&amp;rft.au=Piwowarski%2C+Benjamin&amp;rft.au=Clinchant%2C+St%C3%A9phane&amp;rft_id=https%3A%2F%2Fdl.acm.org%2Fdoi%2Ffull%2F10.1145%2F3634912&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALearned+sparse+retrieval" class="Z3988" about="#mwt52" id="mwAVo"></span></span></li>
+</ol></div>
+
+<link rel="mw:PageProp/Category" href="./Category:Information_retrieval_techniques" id="mwAVs"/>
+
+<span class="mw-empty-elt" about="#mwt56" typeof="mw:Transclusion" id="mwAVw" data-mw='{"parts":[{"template":{"target":{"wt":"comp-sci-stub","href":"./Template:Comp-sci-stub"},"params":{},"i":0}}]}'><style data-mw-deduplicate="TemplateStyles:r1364181290" typeof="mw:Extension/templatestyles" about="#mwt57" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Article stub box/styles.css"},"body":{"extsrc":""}}'>.mw-parser-output .asbox{position:relative;overflow:hidden}.mw-parser-output .asbox table{background:transparent}.mw-parser-output .asbox p{margin:0}.mw-parser-output .asbox p+p{margin-top:0.25em}.mw-parser-output .asbox-body{font-style:italic}.mw-parser-output .asbox-note{font-size:smaller}.mw-parser-output .asbox .navbar{position:absolute;top:-0.75em;right:1em;display:none}.mw-parser-output :not(p):not(.asbox)+.mw-empty-elt+.asbox{margin-top:3em}</style></span><div role="note" class="metadata plainlinks asbox stub" about="#mwt56" id="mwAV0"><table role="presentation"><tbody><tr class="noresize"><td><span class="" typeof="mw:File"><a href="https://en.wikipedia.org/wiki/File:LampFlowchart.svg" class="mw-file-description"><img alt="Stub icon" resource="https://en.wikipedia.org/wiki/File:LampFlowchart.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/40px-LampFlowchart.svg.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail" decoding="async" data-file-width="324" data-file-height="442" data-file-type="drawing" height="30" width="22" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/60px-LampFlowchart.svg.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x" class="mw-file-element"/></a></span></td><td><p class="asbox-body">This <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a> article is a <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Wikipedia:Stub" title="Wikipedia:Stub">stub</a>. You can help Wikipedia by <a rel="mw:ExtLink" href="https://en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;action=edit" class="external text" data-mw-original-href="//en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;action=edit">adding missing information</a>.</p></td></tr></tbody></table><span class="mw-empty-elt"><style data-mw-deduplicate="TemplateStyles:r1333133064" typeof="mw:Extension/templatestyles" about="#mwt58" data-mw='{"name":"templatestyles","attrs":{"src":"Hlist/styles.css"},"body":{"extsrc":""}}'>.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:"\a0 · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1239400231" typeof="mw:Extension/templatestyles" about="#mwt59" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Navbar/styles.css"},"body":{"extsrc":""}}'>.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style></span><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Template:Comp-sci-stub" title="Template:Comp-sci-stub"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Template_talk:Comp-sci-stub" title="Template talk:Comp-sci-stub"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:EditPage/Template:Comp-sci-stub" title="Special:EditPage/Template:Comp-sci-stub"><abbr title="Edit this template">e</abbr></a></li></ul></div><span class="mw-empty-elt"><link rel="mw:PageProp/Category" href="./Category:All_stub_articles"/><link rel="mw:PageProp/Category" href="./Category:Computer_science_stubs"/></span></div>
+<span class="mw-empty-elt" about="#mwt60" typeof="mw:Transclusion" id="mwAV4" data-mw='{"parts":[{"template":{"target":{"wt":"comp-ling-stub","href":"./Template:Comp-ling-stub"},"params":{},"i":0}}]}'><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1364181290" about="#mwt61" typeof="mw:Extension/templatestyles" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Article stub box/styles.css"},"body":{"extsrc":""}}'/></span><div role="note" class="metadata plainlinks asbox stub" about="#mwt60" id="mwAV8"><table role="presentation"><tbody><tr class="noresize"><td><span class="" typeof="mw:File"><a href="https://en.wikipedia.org/wiki/File:LampFlowchart.svg" class="mw-file-description"><img alt="Stub icon" resource="https://en.wikipedia.org/wiki/File:LampFlowchart.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/40px-LampFlowchart.svg.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail" decoding="async" data-file-width="324" data-file-height="442" data-file-type="drawing" height="30" width="22" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/60px-LampFlowchart.svg.png?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x" class="mw-file-element"/></a></span></td><td><p class="asbox-body">This <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Computational_linguistics" title="Computational linguistics">computational linguistics</a>-related article is a <a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Wikipedia:Stub" title="Wikipedia:Stub">stub</a>. You can help Wikipedia by <a rel="mw:ExtLink" href="https://en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;action=edit" class="external text" data-mw-original-href="//en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;action=edit">adding missing information</a>.</p></td></tr></tbody></table><span class="mw-empty-elt"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1333133064" about="#mwt62" typeof="mw:Extension/templatestyles" data-mw='{"name":"templatestyles","attrs":{"src":"Hlist/styles.css"},"body":{"extsrc":""}}'/><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1239400231" about="#mwt63" typeof="mw:Extension/templatestyles" data-mw='{"name":"templatestyles","attrs":{"src":"Module:Navbar/styles.css"},"body":{"extsrc":""}}'/></span><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Template:Comp-ling-stub" title="Template:Comp-ling-stub"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Template_talk:Comp-ling-stub" title="Template talk:Comp-ling-stub"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a rel="mw:WikiLink" href="https://en.wikipedia.org/wiki/Special:EditPage/Template:Comp-ling-stub" title="Special:EditPage/Template:Comp-ling-stub"><abbr title="Edit this template">e</abbr></a></li></ul></div><span class="mw-empty-elt"><link rel="mw:PageProp/Category" href="./Category:All_stub_articles"/><link rel="mw:PageProp/Category" href="./Category:Computational_linguistics_stubs"/></span></div></section>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐7cf99b5568‐szntv
+Cached time: 20260811201839
+Cache expiry: 2592000
+Cache expiry source: Module:Citation/CS1 (os.date(%Y))
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, use‐parsoid]
+CPU time usage: 0.767 seconds
+Real time usage: 0.967 seconds
+Preprocessor visited node count: 1134/1000000
+Revision size: 9826/2097152 bytes
+Post‐expand include size: 54228/2097152 bytes
+Template argument size: 1047/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 3/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 45718/5000000 bytes
+Lua time usage: 0.226/10.000 seconds
+Lua memory usage: 5829943/52428800 bytes
+Number of Wikibase entities loaded: 0/500
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  803.717      1 -total
+ 17.62%  141.584      8 Template:Cite_book
+ 14.20%  114.101      1 Template:Short_description
+  8.97%   72.096      2 Template:Pagetype
+  7.57%   60.815      6 Template:Cite_arXiv
+  3.73%   29.945      1 Template:Redirect
+  3.71%   29.810      1 Template:Comp-sci-stub
+  3.25%   26.082      2 Template:Asbox
+  2.73%   21.962      2 Template:Main_other
+  2.38%   19.100      1 Template:SDcat
+-->
+
+<!-- Render ID d6ca4254-95c1-11f1-b19b-0509cdd4b6d1 -->
+
+<!-- Saved in parser cache with key enwiki:parsoid-pcache:74671424:|#|:idhash:useParsoid=1 and timestamp 20260811201839 and revision id 1332950861. Rendering was triggered because: page_view
+ -->
+
+<!-- Parsoid 0.24.0.0-alpha18 -->
+</div><!--
+Post‐processing cache key enwiki:postproc‐parsoid‐pcache:74671424:|#|:idhash:injectTOC=0!postproc=1!skin=vector‐2022!useParsoid=1!visibleLinks=wtsingle, generated at 20260811201839
+--><noscript><img src="https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&amp;type=1x1&amp;usesul3=1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;oldid=1332950861">https://en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;oldid=1332950861</a>"</div></div>
+					<div id="catlinks" class="catlinks" data-mw-interface=""><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Information_retrieval_techniques" title="Category:Information retrieval techniques">Information retrieval techniques</a></li><li><a href="/wiki/Category:Computer_science_stubs" title="Category:Computer science stubs">Computer science stubs</a></li><li><a href="/wiki/Category:Computational_linguistics_stubs" title="Category:Computational linguistics stubs">Computational linguistics stubs</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_with_short_description" title="Category:Articles with short description">Articles with short description</a></li><li><a href="/wiki/Category:Short_description_matches_Wikidata" title="Category:Short description matches Wikidata">Short description matches Wikidata</a></li><li><a href="/wiki/Category:All_stub_articles" title="Category:All stub articles">All stub articles</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			<footer id="footer" class="mw-footer" >
+				<ul id="footer-info" class="mw-portlet mw-portlet-footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 14 January 2026, at 20:28<span class="anonymous-show">&#160;(UTC)</span>.</li>
+	<li id="footer-info-renderedwith">Page was rendered with <a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Parsoid" class="extiw" title="mw:Special:MyLanguage/Parsoid">Parsoid</a>.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" title="Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License">Creative Commons Attribution-ShareAlike 4.0 License</a>;
+additional terms may apply. By using this site, you agree to the <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use" class="extiw" title="foundation:Special:MyLanguage/Policy:Terms of Use">Terms of Use</a> and <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy" class="extiw" title="foundation:Special:MyLanguage/Policy:Privacy policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a rel="nofollow" class="external text" href="https://wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+</ul>
+
+				<ul id="footer-places" class="mw-portlet mw-portlet-footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/Wikipedia:General_disclaimer">Disclaimers</a></li>
+	<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+	<li id="footer-places-legal-safety-contacts"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Legal:Wikimedia_Foundation_Legal_and_Safety_Contact_Information">Legal &amp; safety contacts</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct">Code of Conduct</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikipedia.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement">Cookie statement</a></li>
+	<li id="footer-places-mobileview"><a href="//en.wikipedia.org/w/index.php?title=Learned_sparse_retrieval&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+				<ul id="footer-icons" class="mw-portlet mw-portlet-footer-icons noprint">
+	<li id="footer-copyrightico"><a href="https://www.wikimedia.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/static/images/footer/wikimedia-button.svg" width="84" height="29"><img src="/static/images/footer/wikimedia.svg" width="25" height="25" alt="Wikimedia Foundation" lang="en" loading="lazy"></picture></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/w/resources/assets/poweredby_mediawiki.svg" width="88" height="31"><img src="/w/resources/assets/mediawiki_compact.svg" alt="Powered by MediaWiki" lang="en" width="25" height="25" loading="lazy"></picture></a></li>
+</ul>
+
+			</footer>
+		</div>
+	</div> 
+</div> 
+<div class="vector-header-container vector-sticky-header-container no-font-mode-scale">
+	<div id="vector-sticky-header" class="vector-sticky-header">
+		<div class="vector-sticky-header-start">
+			<div class="vector-sticky-header-icon-start vector-button-flush-left" aria-hidden="true">
+				<button class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-sticky-header-search-toggle" tabindex="-1" data-event-name="ui.vector-sticky-search-form.icon"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search cdx-button__icon"></span>
+
+<span>Search</span>
+			</button>
+		</div>
+			
+		<div role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box">
+			<div class="vector-typeahead-search-container">
+				<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail">
+					<form action="/w/index.php" id="vector-sticky-search-form" class="cdx-search-input cdx-search-input--has-end-button">
+						<div  class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+							<div class="cdx-text-input cdx-text-input--has-start-icon">
+								<input
+									class="cdx-text-input__input mw-searchInput" autocomplete="off"
+									
+									type="search" name="search" placeholder="Search Wikipedia">
+								<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+							</div>
+							<input type="hidden" name="title" value="Special:Search">
+						</div>
+						<button class="cdx-button cdx-search-input__end-button">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-context-bar">
+				<nav aria-label="Contents" class="vector-toc-landmark">
+						
+					<div id="vector-sticky-header-toc" class="vector-dropdown mw-portlet mw-portlet-sticky-header-toc vector-sticky-header-toc vector-button-flush-left"  >
+						<input type="checkbox" id="vector-sticky-header-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-sticky-header-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"   >
+						<label id="vector-sticky-header-toc-label" for="vector-sticky-header-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet cdx-button__icon"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+						</label>
+						<div class="vector-dropdown-content">
+					
+						<div id="vector-sticky-header-toc-unpinned-container" class="vector-unpinned-container">
+						</div>
+					
+						</div>
+					</div>
+			</nav>
+				<div class="vector-sticky-header-context-bar-primary" aria-hidden="true" ><span lang="en" dir="ltr"><span class="mw-page-title-main">Learned sparse retrieval</span></span></div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-end" aria-hidden="true">
+			<div class="vector-sticky-header-icons">
+				<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-talk-sticky-header" tabindex="-1" data-event-name="talk-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbles mw-ui-icon-wikimedia-speechBubbles cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-subject-sticky-header" tabindex="-1" data-event-name="subject-sticky-header"><span class="vector-icon mw-ui-icon-article mw-ui-icon-wikimedia-article cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-history-sticky-header" tabindex="-1" data-event-name="history-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-history mw-ui-icon-wikimedia-wikimedia-history cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only mw-watchlink" id="ca-watchstar-sticky-header" tabindex="-1" data-event-name="watch-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-star mw-ui-icon-wikimedia-wikimedia-star cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-edit-sticky-header" tabindex="-1" data-event-name="wikitext-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-wikiText mw-ui-icon-wikimedia-wikimedia-wikiText cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-ve-edit-sticky-header" tabindex="-1" data-event-name="ve-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-edit mw-ui-icon-wikimedia-wikimedia-edit cdx-button__icon"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-viewsource-sticky-header" tabindex="-1" data-event-name="ve-edit-protected-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-editLock mw-ui-icon-wikimedia-wikimedia-editLock cdx-button__icon"></span>
+
+<span></span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-buttons">
+				<button class="cdx-button cdx-button--weight-quiet mw-interlanguage-selector" id="p-lang-btn-sticky-header" tabindex="-1" data-event-name="ui.dropdown-p-lang-btn-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-language mw-ui-icon-wikimedia-wikimedia-language cdx-button__icon"></span>
+
+<span>Add languages</span>
+			</button>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive" id="ca-addsection-sticky-header" tabindex="-1" data-event-name="addsection-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbleAdd-progressive mw-ui-icon-wikimedia-speechBubbleAdd-progressive cdx-button__icon"></span>
+
+<span>Add topic</span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-icon-end">
+				<div class="vector-user-links">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mw-portlet mw-portlet-dock-bottom emptyPortlet" id="p-dock-bottom">
+	<ul>
+		
+	</ul>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw-web.eqiad.main-85566b6868-z5c28","wgBackendResponseTime":120,"wgPageParseReport":{"limitreport":{"cputime":"0.767","walltime":"0.967","ppvisitednodes":{"value":1134,"limit":1000000},"revisionsize":{"value":9826,"limit":2097152},"postexpandincludesize":{"value":54228,"limit":2097152},"templateargumentsize":{"value":1047,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":3,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":45718,"limit":5000000},"entityaccesscount":{"value":0,"limit":500},"timingprofile":["100.00%  803.717      1 -total"," 17.62%  141.584      8 Template:Cite_book"," 14.20%  114.101      1 Template:Short_description","  8.97%   72.096      2 Template:Pagetype","  7.57%   60.815      6 Template:Cite_arXiv","  3.73%   29.945      1 Template:Redirect","  3.71%   29.810      1 Template:Comp-sci-stub","  3.25%   26.082      2 Template:Asbox","  2.73%   21.962      2 Template:Main_other","  2.38%   19.100      1 Template:SDcat"]},"scribunto":{"limitreport-timeusage":{"value":"0.226","limit":"10.000"},"limitreport-memusage":{"value":5829943,"limit":52428800}},"cachereport":{"origin":"mw-web.eqiad.main-7cf99b5568-szntv","timestamp":"20260811201839","ttl":2592000,"transientcontent":false,"expiry-source":"Module:Citation/CS1 (os.date(%Y))"}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Learned sparse retrieval","url":"https:\/\/en.wikipedia.org\/wiki\/Learned_sparse_retrieval","sameAs":"http:\/\/www.wikidata.org\/entity\/Q122363545","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q122363545","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2023-08-25T17:39:31Z","dateModified":"2026-01-14T20:28:19Z","headline":"document search algorithm"}</script>
+</body>
+</html>

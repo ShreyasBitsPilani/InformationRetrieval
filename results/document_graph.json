@@ -1,0 +1,1508 @@
+{
+  "nodes": [
+    {
+      "id": "DOC0001",
+      "title": "Information retrieval - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0002",
+      "title": "Machine learning - Wikipedia",
+      "category": "Machine Learning"
+    },
+    {
+      "id": "DOC0003",
+      "title": "Artificial intelligence - Wikipedia",
+      "category": "Artificial Intelligence"
+    },
+    {
+      "id": "DOC0004",
+      "title": "Natural language processing - Wikipedia",
+      "category": "Natural Language Processing"
+    },
+    {
+      "id": "DOC0005",
+      "title": "Data mining - Wikipedia",
+      "category": "Data Mining"
+    },
+    {
+      "id": "DOC0006",
+      "title": "Special Interest Group on Information Retrieval - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0007",
+      "title": "Book sources - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0008",
+      "title": "PubMed Central - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0009",
+      "title": "Allen Kent - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0010",
+      "title": "File:Commons-logo.svg - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0011",
+      "title": "Massachusetts Institute of Technology - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0012",
+      "title": "Book sources - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0013",
+      "title": "Herman Hollerith - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0014",
+      "title": "Category:Articles with excerpts - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0015",
+      "title": "Learned sparse retrieval - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0016",
+      "title": "Terrier (search engine) - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0017",
+      "title": "B\u00fasqueda y recuperaci\u00f3n de informaci\u00f3n - Wikipedia, la enciclopedia libre",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0018",
+      "title": "Case Western Reserve University - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0019",
+      "title": "Search engine indexing - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0020",
+      "title": "Taxonomy - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0021",
+      "title": "Karen Sp\u00e4rck Jones - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0022",
+      "title": "Recommender system - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0023",
+      "title": "Best NFL Betting Sites 2025 \u2013 Top NFL Betting Apps Ranked",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0024",
+      "title": "Probabilistic relevance model - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0025",
+      "title": "Searching MEDLINE in English: a prototype user interface with natural language query, ranked output, and relevance feedback (Conference) | OSTI.GOV",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0026",
+      "title": "Library classification - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0027",
+      "title": "Feature engineering - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0028",
+      "title": "Bayes' theorem - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0029",
+      "title": "Joseph Marie Jacquard - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0030",
+      "title": "Category:Pages displaying short descriptions of redirect targets via Module:Annotated link - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0031",
+      "title": "Uncertain inference - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0032",
+      "title": "Information Retrieval Facility - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0033",
+      "title": "Help:Contents - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0034",
+      "title": "Information behavior - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0035",
+      "title": "Grateful Dead - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0036",
+      "title": "[2107.09226] Pressure-robust staggered DG methods for the Navier-Stokes equations on general meshes",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0037",
+      "title": "Music information retrieval - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0038",
+      "title": "Parsoid - MediaWiki",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0039",
+      "title": "Jacquard machine - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0040",
+      "title": "Google",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0041",
+      "title": "Text Retrieval Conference - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0042",
+      "title": "information retrieval - Wikidata",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0043",
+      "title": "Information Retrieval \u2013 Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0044",
+      "title": "Multi-document summarization - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0045",
+      "title": "Digital object identifier - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0046",
+      "title": "Internet freedom - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0047",
+      "title": "Recuperaci\u00f3 d'informaci\u00f3 - Viquip\u00e8dia, l'enciclop\u00e8dia lliure",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0048",
+      "title": "Wikimedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0049",
+      "title": "Intellectual property - Wikipedia",
+      "category": "Information Retrieval"
+    },
+    {
+      "id": "DOC0050",
+      "title": "Talk:Information retrieval - Wikipedia",
+      "category": "Information Retrieval"
+    }
+  ],
+  "edges": [
+    {
+      "source": "DOC0001",
+      "target": "DOC0006"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0007"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0009"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0011"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0012"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0013"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0014"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0015"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0016"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0017"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0018"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0019"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0020"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0021"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0022"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0023"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0024"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0025"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0026"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0027"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0028"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0029"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0030"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0031"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0032"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0034"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0035"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0036"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0037"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0039"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0041"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0042"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0043"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0044"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0046"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0047"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0050"
+    },
+    {
+      "source": "DOC0001",
+      "target": "DOC0005"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0014"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0027"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0005"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0002",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0014"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0030"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0005"
+    },
+    {
+      "source": "DOC0003",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0007"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0044"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0005"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0004",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0028"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0005",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0006",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0006",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0006",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0006",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0006",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0007",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0007",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0007",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0008",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0008",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0008",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0008",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0009",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0009",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0009",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0009",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0010",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0010",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0010",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0018"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0011",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0012",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0012",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0012",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0013",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0013",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0013",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0013",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0013",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0014",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0014",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0014",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0015",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0015",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0015",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0015",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0016",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0016",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0016",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0016",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0042"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0043"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0047"
+    },
+    {
+      "source": "DOC0017",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0018",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0018",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0018",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0018",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0018",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0019",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0019",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0019",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0019",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0019",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0026"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0034"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0046"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0020",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0006"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0021",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0006"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0003"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0022",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0021"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0024",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0026",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0005"
+    },
+    {
+      "source": "DOC0027",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0028",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0029",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0029",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0029",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0029",
+      "target": "DOC0039"
+    },
+    {
+      "source": "DOC0029",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0030",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0030",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0030",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0031",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0031",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0031",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0031",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0031",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0032",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0032",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0032",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0032",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0032",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0033",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0033",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0020"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0026"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0046"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0034",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0035",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0035",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0035",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0035",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0035",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0022"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0027"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0037",
+      "target": "DOC0002"
+    },
+    {
+      "source": "DOC0038",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0013"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0029"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0039",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0041",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0041",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0041",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0041",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0041",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0017"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0040"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0043"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0047"
+    },
+    {
+      "source": "DOC0042",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0017"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0042"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0047"
+    },
+    {
+      "source": "DOC0043",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0044",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0044",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0044",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0044",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0044",
+      "target": "DOC0004"
+    },
+    {
+      "source": "DOC0045",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0045",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0045",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0045",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0045",
+      "target": "DOC0049"
+    },
+    {
+      "source": "DOC0046",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0046",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0046",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0046",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0017"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0042"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0043"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0047",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0008"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0010"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0045"
+    },
+    {
+      "source": "DOC0049",
+      "target": "DOC0048"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0006"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0009"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0021"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0033"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0038"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0001"
+    },
+    {
+      "source": "DOC0050",
+      "target": "DOC0048"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+rank,doc_id,title,category,pagerank
+1,DOC0048,Wikimedia,Information Retrieval,0.22099317728548043
+2,DOC0038,Parsoid - MediaWiki,Information Retrieval,0.11570407150129375
+3,DOC0033,Help:Contents - Wikipedia,Information Retrieval,0.08072456264403793
+4,DOC0045,Digital object identifier - Wikipedia,Information Retrieval,0.043493307180365835
+5,DOC0001,Information retrieval - Wikipedia,Information Retrieval,0.036066549323681335
+6,DOC0010,File:Commons-logo.svg - Wikipedia,Information Retrieval,0.026685900634460677
+7,DOC0008,PubMed Central - Wikipedia,Information Retrieval,0.02476892738725112
+8,DOC0040,Google,Information Retrieval,0.02300977921153828
+9,DOC0049,Intellectual property - Wikipedia,Information Retrieval,0.02023956502799759
+10,DOC0004,Natural language processing - Wikipedia,Natural Language Processing,0.016714091588358505
+11,DOC0002,Machine learning - Wikipedia,Machine Learning,0.014315332859664872
+12,DOC0017,"Búsqueda y recuperación de información - Wikipedia, la enciclopedia libre",Information Retrieval,0.014135817827124126
+13,DOC0042,information retrieval - Wikidata,Information Retrieval,0.013885234930567628
+14,DOC0043,Information Retrieval – Wikipedia,Information Retrieval,0.013885234930567628
+15,DOC0047,"Recuperació d'informació - Viquipèdia, l'enciclopèdia lliure",Information Retrieval,0.013885234930567628
+16,DOC0003,Artificial intelligence - Wikipedia,Artificial Intelligence,0.013467322529446088
+17,DOC0005,Data mining - Wikipedia,Data Mining,0.012503363477371802
+18,DOC0006,Special Interest Group on Information Retrieval - Wikipedia,Information Retrieval,0.011060789585125847
+19,DOC0021,Karen Spärck Jones - Wikipedia,Information Retrieval,0.010401243298674026
+20,DOC0014,Category:Articles with excerpts - Wikipedia,Information Retrieval,0.010202527832891124
+21,DOC0027,Feature engineering - Wikipedia,Information Retrieval,0.009948596049024974
+22,DOC0039,Jacquard machine - Wikipedia,Information Retrieval,0.009811802467225279
+23,DOC0046,Internet freedom - Wikipedia,Information Retrieval,0.009780195754650308
+24,DOC0026,Library classification - Wikipedia,Information Retrieval,0.009780195754650308
+25,DOC0044,Multi-document summarization - Wikipedia,Information Retrieval,0.009327434857230636
+26,DOC0007,Book sources - Wikipedia,Information Retrieval,0.009327434857230636
+27,DOC0013,Herman Hollerith - Wikipedia,Information Retrieval,0.009277167102456147
+28,DOC0029,Joseph Marie Jacquard - Wikipedia,Information Retrieval,0.009277167102456147
+29,DOC0018,Case Western Reserve University - Wikipedia,Information Retrieval,0.009234620127305809
+30,DOC0009,Allen Kent - Wikipedia,Information Retrieval,0.009234620127305809
+31,DOC0028,Bayes' theorem - Wikipedia,Information Retrieval,0.009200823108015708
+32,DOC0030,Category:Pages displaying short descriptions of redirect targets via Module:Annotated link - Wikipedia,Information Retrieval,0.009188563095677275
+33,DOC0020,Taxonomy - Wikipedia,Information Retrieval,0.00907865069948565
+34,DOC0034,Information behavior - Wikipedia,Information Retrieval,0.008936202464154854
+35,DOC0022,Recommender system - Wikipedia,Information Retrieval,0.008934631311811126
+36,DOC0016,Terrier (search engine) - Wikipedia,Information Retrieval,0.008234657408990195
+37,DOC0012,Book sources - Wikipedia,Information Retrieval,0.008234657408990195
+38,DOC0011,Massachusetts Institute of Technology - Wikipedia,Information Retrieval,0.008234657408990195
+39,DOC0015,Learned sparse retrieval - Wikipedia,Information Retrieval,0.008234657408990195
+40,DOC0023,Best NFL Betting Sites 2025 – Top NFL Betting Apps Ranked,Information Retrieval,0.008234657408990195
+41,DOC0019,Search engine indexing - Wikipedia,Information Retrieval,0.008234657408990195
+42,DOC0025,"Searching MEDLINE in English: a prototype user interface with natural language query, ranked output, and relevance feedback (Conference) | OSTI.GOV",Information Retrieval,0.008234657408990195
+43,DOC0031,Uncertain inference - Wikipedia,Information Retrieval,0.008234657408990195
+44,DOC0032,Information Retrieval Facility - Wikipedia,Information Retrieval,0.008234657408990195
+45,DOC0024,Probabilistic relevance model - Wikipedia,Information Retrieval,0.008234657408990195
+46,DOC0037,Music information retrieval - Wikipedia,Information Retrieval,0.008234657408990195
+47,DOC0041,Text Retrieval Conference - Wikipedia,Information Retrieval,0.008234657408990195
+48,DOC0035,Grateful Dead - Wikipedia,Information Retrieval,0.008234657408990195
+49,DOC0036,[2107.09226] Pressure-robust staggered DG methods for the Navier-Stokes equations on general meshes,Information Retrieval,0.008234657408990195
+50,DOC0050,Talk:Information retrieval - Wikipedia,Information Retrieval,0.008234657408990195

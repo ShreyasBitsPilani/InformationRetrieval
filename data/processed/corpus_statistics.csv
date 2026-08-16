@@ -1,0 +1,8 @@
+metric,value
+total_documents,50.0
+total_processed_words,157587.0
+unique_terms,16803.0
+average_document_length,3151.74
+median_document_length,1817.5
+minimum_document_length,55.0
+maximum_document_length,18545.0

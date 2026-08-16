@@ -1,0 +1,6 @@
+rank,doc_id,title,category,url,similarity
+1,DOC0003,Artificial intelligence - Wikipedia,Artificial Intelligence,https://en.wikipedia.org/wiki/Artificial_intelligence,0.5830724482122349
+2,DOC0027,Feature engineering - Wikipedia,Information Retrieval,https://en.wikipedia.org/wiki/Feature_extraction,0.5118671275609156
+3,DOC0005,Data mining - Wikipedia,Data Mining,https://en.wikipedia.org/wiki/Data_mining,0.4858565348125123
+4,DOC0004,Natural language processing - Wikipedia,Natural Language Processing,https://en.wikipedia.org/wiki/Natural_language_processing,0.41221540790620365
+5,DOC0001,Information retrieval - Wikipedia,Information Retrieval,https://en.wikipedia.org/wiki/Information_retrieval,0.39543517418872576
