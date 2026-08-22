@@ -2,12 +2,26 @@ import os
 import sys
 import json
 import pickle
+import time
+import subprocess
+from pathlib import Path
 
 import pandas as pd
 import numpy as np
 import streamlit as st
 
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import (
+    TfidfVectorizer,
+    CountVectorizer
+)
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix
+)
 
 
 # ============================================================
@@ -31,7 +45,7 @@ if SRC_DIR not in sys.path:
 
 
 # ============================================================
-# IMPORT PREPROCESSING
+# OPTIONAL PREPROCESSING IMPORT
 # ============================================================
 
 try:
@@ -70,6 +84,33 @@ CORPUS_STATS_FILE = os.path.join(
     "data",
     "processed",
     "corpus_statistics.csv"
+)
+
+DOCUMENTS_FILE = os.path.join(
+    PROJECT_ROOT,
+    "data",
+    "processed",
+    "documents.csv"
+)
+
+LINKS_FILE = os.path.join(
+    PROJECT_ROOT,
+    "data",
+    "processed",
+    "links.csv"
+)
+
+DOC_LINKS_FILE = os.path.join(
+    PROJECT_ROOT,
+    "data",
+    "processed",
+    "doc_links.csv"
+)
+
+RAW_DIR = os.path.join(
+    PROJECT_ROOT,
+    "data",
+    "raw"
 )
 
 INVERTED_INDEX_FILE = os.path.join(
@@ -154,6 +195,13 @@ def safe_float(value):
         return 0.0
 
 
+def safe_int(value):
+    try:
+        return int(value)
+    except Exception:
+        return 0
+
+
 def normalize_text(text):
     """
     Prepare query text for TF-IDF.
@@ -165,11 +213,11 @@ def normalize_text(text):
     if preprocess_text is not None:
 
         try:
+
             processed = preprocess_text(
                 text
             )
 
-            # If preprocessing returns a list
             if isinstance(
                 processed,
                 list
@@ -180,7 +228,6 @@ def normalize_text(text):
                     for x in processed
                 )
 
-            # If preprocessing returns a string
             return str(
                 processed
             )
@@ -189,6 +236,64 @@ def normalize_text(text):
             pass
 
     return text.lower()
+
+
+def get_document_text_column(df):
+    """
+    Identify the most appropriate text column.
+    """
+
+    candidates = [
+        "processed_text",
+        "content",
+        "text",
+        "body",
+        "document"
+    ]
+
+    for column in candidates:
+
+        if column in df.columns:
+
+            return column
+
+    return None
+
+
+def get_title(row):
+    return str(
+        row.get(
+            "title",
+            "Untitled Document"
+        )
+    )
+
+
+def get_doc_id(row):
+    return str(
+        row.get(
+            "doc_id",
+            ""
+        )
+    )
+
+
+def get_category(row):
+    return str(
+        row.get(
+            "category",
+            "Unknown"
+        )
+    )
+
+
+def get_url(row):
+    return str(
+        row.get(
+            "url",
+            ""
+        )
+    )
 
 
 # ============================================================
@@ -204,9 +309,15 @@ def load_documents():
 
         return pd.DataFrame()
 
-    return pd.read_csv(
-        PROCESSED_FILE
-    )
+    try:
+
+        return pd.read_csv(
+            PROCESSED_FILE
+        )
+
+    except Exception:
+
+        return pd.DataFrame()
 
 
 # ============================================================
@@ -222,9 +333,15 @@ def load_keywords():
 
         return pd.DataFrame()
 
-    return pd.read_csv(
-        KEYWORDS_FILE
-    )
+    try:
+
+        return pd.read_csv(
+            KEYWORDS_FILE
+        )
+
+    except Exception:
+
+        return pd.DataFrame()
 
 
 # ============================================================
@@ -240,9 +357,15 @@ def load_corpus_statistics():
 
         return pd.DataFrame()
 
-    return pd.read_csv(
-        CORPUS_STATS_FILE
-    )
+    try:
+
+        return pd.read_csv(
+            CORPUS_STATS_FILE
+        )
+
+    except Exception:
+
+        return pd.DataFrame()
 
 
 # ============================================================
@@ -457,7 +580,7 @@ def load_per_query_evaluation():
 
 
 # ============================================================
-# SEARCH FUNCTION
+# SEARCH
 # ============================================================
 
 def perform_tfidf_search(
@@ -480,17 +603,9 @@ def perform_tfidf_search(
 
         return pd.DataFrame()
 
-    # --------------------------------------------------------
-    # Preprocess query
-    # --------------------------------------------------------
-
     processed_query = normalize_text(
         query
     )
-
-    # --------------------------------------------------------
-    # Convert query into TF-IDF vector
-    # --------------------------------------------------------
 
     try:
 
@@ -502,7 +617,6 @@ def perform_tfidf_search(
 
     except Exception:
 
-        # Fallback to raw query
         try:
 
             query_vector = (
@@ -515,10 +629,6 @@ def perform_tfidf_search(
 
             return pd.DataFrame()
 
-    # --------------------------------------------------------
-    # Calculate cosine similarity
-    # --------------------------------------------------------
-
     scores = (
         cosine_similarity(
             query_vector,
@@ -527,29 +637,21 @@ def perform_tfidf_search(
         .flatten()
     )
 
-    # --------------------------------------------------------
-    # Create result table
-    # --------------------------------------------------------
-
     results = documents.copy()
+
+    if len(scores) != len(results):
+
+        return pd.DataFrame()
 
     results[
         "score"
     ] = scores
-
-    # --------------------------------------------------------
-    # Remove zero-score documents
-    # --------------------------------------------------------
 
     results = results[
         results[
             "score"
         ] > 0
     ]
-
-    # --------------------------------------------------------
-    # Sort
-    # --------------------------------------------------------
 
     results = (
         results
@@ -565,15 +667,10 @@ def perform_tfidf_search(
         )
     )
 
-    # --------------------------------------------------------
-    # Add rank
-    # --------------------------------------------------------
-
     results[
         "rank"
     ] = (
-        results.index
-        + 1
+        results.index + 1
     )
 
     return results
@@ -613,6 +710,10 @@ def perform_hybrid_search(
         ] = 0.0
 
         results[
+            "pagerank_normalized"
+        ] = 0.0
+
+        results[
             "hybrid_score"
         ] = results[
             "score"
@@ -625,10 +726,6 @@ def perform_hybrid_search(
                 drop=True
             )
         )
-
-    # --------------------------------------------------------
-    # Merge PageRank
-    # --------------------------------------------------------
 
     pagerank_temp = pagerank[
         [
@@ -665,10 +762,6 @@ def perform_hybrid_search(
         .fillna(0.0)
     )
 
-    # --------------------------------------------------------
-    # Normalize PageRank
-    # --------------------------------------------------------
-
     pr_min = results[
         "pagerank"
     ].min()
@@ -684,11 +777,9 @@ def perform_hybrid_search(
         ] = (
             results[
                 "pagerank"
-            ]
-            - pr_min
+            ] - pr_min
         ) / (
-            pr_max
-            - pr_min
+            pr_max - pr_min
         )
 
     else:
@@ -696,10 +787,6 @@ def perform_hybrid_search(
         results[
             "pagerank_normalized"
         ] = 0.0
-
-    # --------------------------------------------------------
-    # Hybrid score
-    # --------------------------------------------------------
 
     results[
         "hybrid_score"
@@ -716,10 +803,6 @@ def perform_hybrid_search(
             "pagerank_normalized"
         ]
     )
-
-    # --------------------------------------------------------
-    # Sort
-    # --------------------------------------------------------
 
     results = (
         results
@@ -738,15 +821,14 @@ def perform_hybrid_search(
     results[
         "rank"
     ] = (
-        results.index
-        + 1
+        results.index + 1
     )
 
     return results
 
 
 # ============================================================
-# CONTENT-BASED RECOMMENDATIONS
+# RECOMMENDATIONS
 # ============================================================
 
 def get_recommendations(
@@ -803,7 +885,6 @@ def get_recommendations(
     ):
 
         if index == document_index:
-
             continue
 
         row = documents.iloc[
@@ -819,15 +900,25 @@ def get_recommendations(
                     row["title"],
 
                 "category":
-                    row["category"],
+                    row.get(
+                        "category",
+                        "Unknown"
+                    ),
 
                 "url":
-                    row["url"],
+                    row.get(
+                        "url",
+                        ""
+                    ),
 
                 "similarity":
                     float(score)
             }
         )
+
+    if not recommendations:
+
+        return pd.DataFrame()
 
     result = (
         pd.DataFrame(
@@ -845,20 +936,371 @@ def get_recommendations(
         )
     )
 
-    if not result.empty:
-
-        result[
-            "rank"
-        ] = (
-            result.index
-            + 1
-        )
+    result[
+        "rank"
+    ] = (
+        result.index + 1
+    )
 
     return result
 
 
 # ============================================================
-# LOAD ALL DATA
+# TEXT MINING / CLASSIFICATION
+# ============================================================
+
+def get_classification_dataframe(
+    documents
+):
+
+    if documents.empty:
+
+        return pd.DataFrame()
+
+    text_column = (
+        get_document_text_column(
+            documents
+        )
+    )
+
+    if text_column is None:
+
+        return pd.DataFrame()
+
+    if "category" not in documents.columns:
+
+        return pd.DataFrame()
+
+    df = documents[
+        [
+            text_column,
+            "category"
+        ]
+    ].copy()
+
+    df[
+        text_column
+    ] = (
+        df[
+            text_column
+        ]
+        .fillna("")
+        .astype(str)
+    )
+
+    df[
+        "category"
+    ] = (
+        df[
+            "category"
+        ]
+        .fillna("")
+        .astype(str)
+    )
+
+    df = df[
+        (
+            df[
+                text_column
+            ].str.strip() != ""
+        )
+        &
+        (
+            df[
+                "category"
+            ].str.strip() != ""
+        )
+    ]
+
+    return df
+
+
+def evaluate_feature_strategies(
+    documents
+):
+
+    df = get_classification_dataframe(
+        documents
+    )
+
+    if df.empty:
+
+        return (
+            pd.DataFrame(),
+            {}
+        )
+
+    text_column = (
+        get_document_text_column(
+            documents
+        )
+    )
+
+    X_text = (
+        df[
+            text_column
+        ]
+        .tolist()
+    )
+
+    y = (
+        df[
+            "category"
+        ]
+        .tolist()
+    )
+
+    if len(
+        set(y)
+    ) < 2:
+
+        return (
+            pd.DataFrame(),
+            {}
+        )
+
+    # --------------------------------------------------------
+    # Use stratification only when possible
+    # --------------------------------------------------------
+
+    try:
+
+        X_train, X_test, y_train, y_test = (
+            train_test_split(
+                X_text,
+                y,
+                test_size=0.25,
+                random_state=42,
+                stratify=y
+            )
+        )
+
+    except Exception:
+
+        X_train, X_test, y_train, y_test = (
+            train_test_split(
+                X_text,
+                y,
+                test_size=0.25,
+                random_state=42
+            )
+        )
+
+    strategies = [
+        (
+            "Count Vectorizer",
+            CountVectorizer(
+                stop_words="english",
+                ngram_range=(1, 1)
+            )
+        ),
+        (
+            "TF-IDF Unigram",
+            TfidfVectorizer(
+                stop_words="english",
+                ngram_range=(1, 1)
+            )
+        ),
+        (
+            "TF-IDF Unigram + Bigram",
+            TfidfVectorizer(
+                stop_words="english",
+                ngram_range=(1, 2)
+            )
+        ),
+        (
+            "TF-IDF No Stopword Removal",
+            TfidfVectorizer(
+                stop_words=None,
+                ngram_range=(1, 1)
+            )
+        )
+    ]
+
+    rows = []
+
+    detailed_results = {}
+
+    for strategy_name, vectorizer_obj in strategies:
+
+        try:
+
+            X_train_features = (
+                vectorizer_obj.fit_transform(
+                    X_train
+                )
+            )
+
+            X_test_features = (
+                vectorizer_obj.transform(
+                    X_test
+                )
+            )
+
+            classifier = LogisticRegression(
+                max_iter=2000
+            )
+
+            classifier.fit(
+                X_train_features,
+                y_train
+            )
+
+            predictions = (
+                classifier.predict(
+                    X_test_features
+                )
+            )
+
+            accuracy = (
+                accuracy_score(
+                    y_test,
+                    predictions
+                )
+            )
+
+            feature_count = (
+                X_train_features.shape[1]
+            )
+
+            rows.append(
+                {
+                    "Strategy":
+                        strategy_name,
+
+                    "# Features":
+                        feature_count,
+
+                    "Test Accuracy":
+                        round(
+                            float(
+                                accuracy
+                            ),
+                            4
+                        )
+                }
+            )
+
+            detailed_results[
+                strategy_name
+            ] = {
+                "vectorizer":
+                    vectorizer_obj,
+
+                "classifier":
+                    classifier,
+
+                "y_test":
+                    y_test,
+
+                "predictions":
+                    predictions,
+
+                "accuracy":
+                    accuracy,
+
+                "feature_count":
+                    feature_count
+            }
+
+        except Exception as exc:
+
+            rows.append(
+                {
+                    "Strategy":
+                        strategy_name,
+
+                    "# Features":
+                        0,
+
+                    "Test Accuracy":
+                        0.0
+                }
+            )
+
+            detailed_results[
+                strategy_name
+            ] = {
+                "error":
+                    str(exc)
+            }
+
+    return (
+        pd.DataFrame(rows),
+        detailed_results
+    )
+
+
+# ============================================================
+# RUN EXISTING PYTHON MODULE
+# ============================================================
+
+def run_python_module(
+    module_name
+):
+
+    module_path = os.path.join(
+        SRC_DIR,
+        module_name
+    )
+
+    if not module_path.endswith(
+        ".py"
+    ):
+
+        module_path += ".py"
+
+    if not exists(
+        module_path
+    ):
+
+        return (
+            False,
+            f"Module not found: {module_path}"
+        )
+
+    try:
+
+        result = subprocess.run(
+            [
+                sys.executable,
+                module_path
+            ],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+            timeout=300
+        )
+
+        if result.returncode == 0:
+
+            return (
+                True,
+                result.stdout
+            )
+
+        return (
+            False,
+            result.stderr
+        )
+
+    except subprocess.TimeoutExpired:
+
+        return (
+            False,
+            "Process timed out after 300 seconds."
+        )
+
+    except Exception as exc:
+
+        return (
+            False,
+            str(exc)
+        )
+
+
+# ============================================================
+# LOAD DATA
 # ============================================================
 
 documents = load_documents()
@@ -893,7 +1335,7 @@ per_query_evaluation = (
 
 
 # ============================================================
-# APPLICATION HEADER
+# HEADER
 # ============================================================
 
 st.title(
@@ -901,7 +1343,9 @@ st.title(
 )
 
 st.caption(
-    "Web Search • TF-IDF • PageRank • Hybrid Ranking • Recommendations"
+    "End-to-End Information Retrieval • "
+    "Crawling • Text Mining • TF-IDF • "
+    "PageRank • Hybrid Ranking • Recommendations • Evaluation"
 )
 
 
@@ -917,6 +1361,9 @@ page = st.sidebar.radio(
     "Select Module",
     [
         "🏠 Dashboard",
+        "🕷️ Crawling",
+        "🧪 Text Mining",
+        "📚 Index Management",
         "🔎 Search",
         "💡 Recommendations",
         "📄 Document Profile",
@@ -940,16 +1387,14 @@ if page == "🏠 Dashboard":
     st.write(
         """
         This application demonstrates an end-to-end
-        Information Retrieval system developed for the
-        assignment.
+        Information Retrieval system. The complete workflow
+        covers document acquisition, preprocessing, text mining,
+        indexing, search, PageRank, hybrid ranking,
+        recommendation, evaluation, and analytics.
         """
     )
 
     st.divider()
-
-    # --------------------------------------------------------
-    # Metrics
-    # --------------------------------------------------------
 
     total_documents = len(
         documents
@@ -1010,46 +1455,862 @@ if page == "🏠 Dashboard":
 
     st.divider()
 
-    # --------------------------------------------------------
-    # System pipeline
-    # --------------------------------------------------------
-
     st.subheader(
-        "IR System Pipeline"
+        "Complete IR Lifecycle"
     )
 
     st.code(
         """
 Web Sources
     ↓
-Dataset Construction
+Web Crawling
+    ↓
+Duplicate URL / Document Handling
     ↓
 Text Preprocessing
     ↓
-Keyword Extraction
-    ↓
-Document Profiling
-    ↓
-Inverted Index + TF-IDF
-    ↓
-Search
-    ↓
-PageRank
-    ↓
-Hybrid Ranking
-    ↓
-Recommendation
-    ↓
-Evaluation
-    ↓
-Analytics
+Text Mining
+ ┌───────────────┬──────────────────┐
+ ↓               ↓                  ↓
+Keywords    Document Profile   Classification
+ └───────────────┴──────────────────┘
+                    ↓
+             Index Management
+                    ↓
+              TF-IDF Retrieval
+                    ↓
+                PageRank
+                    ↓
+             Hybrid Ranking
+                    ↓
+          Content Recommendation
+                    ↓
+               Evaluation
+                    ↓
+          Performance Analytics
         """,
         language="text"
     )
 
     st.success(
-        "All major IR modules are available through the sidebar."
+        "Use the sidebar to access every major IR component."
     )
+
+
+# ============================================================
+# CRAWLING
+# ============================================================
+
+elif page == "🕷️ Crawling":
+
+    st.header(
+        "🕷️ Web Crawling Interface"
+    )
+
+    st.write(
+        """
+        Configure the document acquisition process.
+        The current repository contains the collected corpus
+        under data/raw/ and the processed metadata under
+        data/processed/.
+        """
+    )
+
+    st.subheader(
+        "Crawling Configuration"
+    )
+
+    seed_urls_text = st.text_area(
+        "Seed URL(s)",
+        placeholder=(
+            "Enter one URL per line\n"
+            "https://example.com\n"
+            "https://example.org"
+        ),
+        height=120
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        crawl_depth = st.number_input(
+            "Crawling Depth",
+            min_value=0,
+            max_value=5,
+            value=1,
+            step=1
+        )
+
+    with col2:
+
+        max_documents = st.number_input(
+            "Maximum Documents",
+            min_value=1,
+            max_value=500,
+            value=50,
+            step=1
+        )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        remove_duplicate_urls = st.checkbox(
+            "Remove Duplicate URLs",
+            value=True
+        )
+
+    with col2:
+
+        remove_duplicate_documents = st.checkbox(
+            "Remove Duplicate Documents",
+            value=True
+        )
+
+    st.divider()
+
+    st.subheader(
+        "Current Corpus"
+    )
+
+    raw_document_count = 0
+
+    if exists(
+        RAW_DIR
+    ):
+
+        raw_document_count = len(
+            [
+                file
+                for file in os.listdir(
+                    RAW_DIR
+                )
+                if file.lower().endswith(
+                    ".html"
+                )
+            ]
+        )
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric(
+        "Raw Documents",
+        raw_document_count
+    )
+
+    col2.metric(
+        "Processed Documents",
+        len(documents)
+    )
+
+    col3.metric(
+        "Configured Maximum",
+        max_documents
+    )
+
+    st.divider()
+
+    st.info(
+        """
+        The existing dataset is already collected and stored in
+        data/raw/. The controls above record the crawling
+        configuration required for the end-to-end workflow.
+        """
+    )
+
+    if st.button(
+        "🚀 Start Crawling / Refresh Corpus",
+        type="primary"
+    ):
+
+        if not seed_urls_text.strip():
+
+            st.warning(
+                "Please enter at least one seed URL."
+            )
+
+        else:
+
+            seed_urls = [
+                url.strip()
+                for url in seed_urls_text.splitlines()
+                if url.strip()
+            ]
+
+            st.write(
+                "**Configured Seeds:**"
+            )
+
+            for url in seed_urls:
+
+                st.write(
+                    f"- {url}"
+                )
+
+            st.write(
+                f"**Crawling depth:** {crawl_depth}"
+            )
+
+            st.write(
+                f"**Maximum documents:** {max_documents}"
+            )
+
+            st.write(
+                f"**Duplicate URL removal:** "
+                f"{'Enabled' if remove_duplicate_urls else 'Disabled'}"
+            )
+
+            st.write(
+                f"**Duplicate document removal:** "
+                f"{'Enabled' if remove_duplicate_documents else 'Disabled'}"
+            )
+
+            st.warning(
+                """
+                The currently stored corpus is used by the application.
+                To perform a new web crawl, the crawler implementation
+                in src/dataset_builder.py must support the supplied
+                crawling parameters.
+                """
+            )
+
+    st.divider()
+
+    st.subheader(
+        "Acquisition Artifacts"
+    )
+
+    artifact_data = {
+        "Artifact": [
+            "Raw HTML Documents",
+            "Document Metadata",
+            "Document Content",
+            "Document Links",
+            "Processed Documents"
+        ],
+        "Path": [
+            "data/raw/",
+            "data/processed/documents.csv",
+            "data/processed/content.csv",
+            "data/processed/doc_links.csv",
+            "data/processed/processed_documents.csv"
+        ],
+        "Available": [
+            exists(RAW_DIR),
+            exists(DOCUMENTS_FILE),
+            exists(CONTENT_FILE),
+            exists(DOC_LINKS_FILE),
+            exists(PROCESSED_FILE)
+        ]
+    }
+
+    st.dataframe(
+        pd.DataFrame(
+            artifact_data
+        ),
+        use_container_width=True,
+        hide_index=True
+    )
+
+
+# ============================================================
+# TEXT MINING
+# ============================================================
+
+elif page == "🧪 Text Mining":
+
+    st.header(
+        "🧪 Text Preprocessing and Mining"
+    )
+
+    st.write(
+        """
+        This module demonstrates document profiling,
+        keyword analysis, document classification, and
+        comparative feature extraction strategies.
+        """
+    )
+
+    # --------------------------------------------------------
+    # Corpus statistics
+    # --------------------------------------------------------
+
+    st.subheader(
+        "Corpus Statistics"
+    )
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "Documents",
+        len(documents)
+    )
+
+    if "category" in documents.columns:
+
+        col2.metric(
+            "Categories",
+            documents[
+                "category"
+            ].nunique()
+        )
+
+    else:
+
+        col2.metric(
+            "Categories",
+            0
+        )
+
+    if "processed_word_count" in documents.columns:
+
+        col3.metric(
+            "Average Words",
+            f"{documents['processed_word_count'].mean():.1f}"
+        )
+
+    else:
+
+        col3.metric(
+            "Average Words",
+            "N/A"
+        )
+
+    if "unique_terms" in documents.columns:
+
+        col4.metric(
+            "Average Unique Terms",
+            f"{documents['unique_terms'].mean():.1f}"
+        )
+
+    else:
+
+        col4.metric(
+            "Average Unique Terms",
+            "N/A"
+        )
+
+    st.divider()
+
+    # --------------------------------------------------------
+    # Keywords
+    # --------------------------------------------------------
+
+    st.subheader(
+        "🔑 Keyword Extraction"
+    )
+
+    if keywords.empty:
+
+        st.info(
+            "Keyword data is not available."
+        )
+
+    else:
+
+        st.dataframe(
+            keywords.head(100),
+            use_container_width=True,
+            hide_index=True
+        )
+
+    st.divider()
+
+    # --------------------------------------------------------
+    # Document profile summary
+    # --------------------------------------------------------
+
+    st.subheader(
+        "📄 Document Profiling"
+    )
+
+    profile_columns = [
+        column
+        for column in [
+            "doc_id",
+            "title",
+            "category",
+            "processed_word_count",
+            "unique_terms"
+        ]
+        if column in documents.columns
+    ]
+
+    if profile_columns:
+
+        st.dataframe(
+            documents[
+                profile_columns
+            ],
+            use_container_width=True,
+            hide_index=True
+        )
+
+    st.divider()
+
+    # --------------------------------------------------------
+    # Classification
+    # --------------------------------------------------------
+
+    st.subheader(
+        "🏷️ Document Classification"
+    )
+
+    classification_df = (
+        get_classification_dataframe(
+            documents
+        )
+    )
+
+    if classification_df.empty:
+
+        st.warning(
+            """
+            Document classification cannot be performed because
+            a suitable text column and category column were not found.
+            """
+        )
+
+    else:
+
+        st.write(
+            f"Classification dataset contains "
+            f"**{len(classification_df)} documents**."
+        )
+
+        st.write(
+            "Category distribution:"
+        )
+
+        st.bar_chart(
+            classification_df[
+                "category"
+            ].value_counts()
+        )
+
+        st.divider()
+
+        if st.button(
+            "🧪 Run Feature Comparison",
+            type="primary"
+        ):
+
+            with st.spinner(
+                "Training classification models..."
+            ):
+
+                comparison_df, detailed_results = (
+                    evaluate_feature_strategies(
+                        documents
+                    )
+                )
+
+            if comparison_df.empty:
+
+                st.error(
+                    "Feature comparison could not be completed."
+                )
+
+            else:
+
+                st.session_state[
+                    "feature_comparison"
+                ] = comparison_df
+
+                st.session_state[
+                    "classification_results"
+                ] = detailed_results
+
+        if (
+            "feature_comparison"
+            in st.session_state
+        ):
+
+            comparison_df = (
+                st.session_state[
+                    "feature_comparison"
+                ]
+            )
+
+            st.subheader(
+                "Comparative Feature Analysis"
+            )
+
+            st.dataframe(
+                comparison_df,
+                use_container_width=True,
+                hide_index=True
+            )
+
+            st.subheader(
+                "Feature Strategy Accuracy"
+            )
+
+            chart_df = comparison_df.set_index(
+                "Strategy"
+            )[
+                "Test Accuracy"
+            ]
+
+            st.bar_chart(
+                chart_df
+            )
+
+            st.subheader(
+                "Feature Counts"
+            )
+
+            feature_df = comparison_df.set_index(
+                "Strategy"
+            )[
+                "# Features"
+            ]
+
+            st.bar_chart(
+                feature_df
+            )
+
+            st.divider()
+
+            st.subheader(
+                "Classification Details"
+            )
+
+            detailed_results = st.session_state.get(
+                "classification_results",
+                {}
+            )
+
+            strategy_names = list(
+                detailed_results.keys()
+            )
+
+            if strategy_names:
+
+                selected_strategy = st.selectbox(
+                    "Select Feature Strategy",
+                    strategy_names
+                )
+
+                result = detailed_results[
+                    selected_strategy
+                ]
+
+                if "error" in result:
+
+                    st.error(
+                        result["error"]
+                    )
+
+                else:
+
+                    st.metric(
+                        "Test Accuracy",
+                        f"{result['accuracy']:.4f}"
+                    )
+
+                    cm = confusion_matrix(
+                        result["y_test"],
+                        result["predictions"]
+                    )
+
+                    st.write(
+                        "Confusion Matrix"
+                    )
+
+                    st.dataframe(
+                        pd.DataFrame(
+                            cm
+                        ),
+                        use_container_width=True,
+                        hide_index=True
+                    )
+
+                    report = classification_report(
+                        result["y_test"],
+                        result["predictions"],
+                        output_dict=True,
+                        zero_division=0
+                    )
+
+                    report_df = (
+                        pd.DataFrame(
+                            report
+                        )
+                        .transpose()
+                    )
+
+                    st.write(
+                        "Classification Report"
+                    )
+
+                    st.dataframe(
+                        report_df,
+                        use_container_width=True
+                    )
+
+
+# ============================================================
+# INDEX MANAGEMENT
+# ============================================================
+
+elif page == "📚 Index Management":
+
+    st.header(
+        "📚 Index Management"
+    )
+
+    st.write(
+        """
+        Inspect the inverted index and TF-IDF indexing artifacts
+        used by the Information Retrieval system.
+        """
+    )
+
+    index_exists = exists(
+        INVERTED_INDEX_FILE
+    )
+
+    metadata_exists = exists(
+        INDEX_METADATA_FILE
+    )
+
+    vectorizer_exists = exists(
+        TFIDF_VECTORIZER_FILE
+    )
+
+    matrix_exists = exists(
+        TFIDF_MATRIX_FILE
+    )
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "Inverted Index",
+        "Ready" if index_exists else "Missing"
+    )
+
+    col2.metric(
+        "Metadata",
+        "Ready" if metadata_exists else "Missing"
+    )
+
+    col3.metric(
+        "TF-IDF Vectorizer",
+        "Ready" if vectorizer_exists else "Missing"
+    )
+
+    col4.metric(
+        "TF-IDF Matrix",
+        "Ready" if matrix_exists else "Missing"
+    )
+
+    st.divider()
+
+    st.subheader(
+        "Index Statistics"
+    )
+
+    total_documents = len(
+        documents
+    )
+
+    unique_terms = index_metadata.get(
+        "unique_terms",
+        len(inverted_index)
+    )
+
+    total_postings = index_metadata.get(
+        "total_postings",
+        0
+    )
+
+    matrix_rows = 0
+    matrix_columns = 0
+
+    if tfidf_matrix is not None:
+
+        try:
+
+            matrix_rows = (
+                tfidf_matrix.shape[0]
+            )
+
+            matrix_columns = (
+                tfidf_matrix.shape[1]
+            )
+
+        except Exception:
+
+            pass
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "Indexed Documents",
+        total_documents
+    )
+
+    col2.metric(
+        "Unique Terms",
+        unique_terms
+    )
+
+    col3.metric(
+        "Index Postings",
+        total_postings
+    )
+
+    col4.metric(
+        "TF-IDF Features",
+        matrix_columns
+    )
+
+    st.divider()
+
+    st.subheader(
+        "TF-IDF Matrix"
+    )
+
+    st.write(
+        f"Rows (documents): **{matrix_rows}**"
+    )
+
+    st.write(
+        f"Columns (features): **{matrix_columns}**"
+    )
+
+    st.divider()
+
+    st.subheader(
+        "Index Metadata"
+    )
+
+    if index_metadata:
+
+        metadata_rows = []
+
+        for key, value in index_metadata.items():
+
+            metadata_rows.append(
+                {
+                    "Property": key,
+                    "Value": value
+                }
+            )
+
+        st.dataframe(
+            pd.DataFrame(
+                metadata_rows
+            ),
+            use_container_width=True,
+            hide_index=True
+        )
+
+    else:
+
+        st.info(
+            "Index metadata is not available."
+        )
+
+    st.divider()
+
+    st.subheader(
+        "Index Files"
+    )
+
+    index_files = [
+        INVERTED_INDEX_FILE,
+        INDEX_METADATA_FILE,
+        TFIDF_VECTORIZER_FILE,
+        TFIDF_MATRIX_FILE
+    ]
+
+    file_rows = []
+
+    for path in index_files:
+
+        file_rows.append(
+            {
+                "File":
+                    os.path.relpath(
+                        path,
+                        PROJECT_ROOT
+                    ),
+
+                "Exists":
+                    exists(path),
+
+                "Size (KB)":
+                    round(
+                        os.path.getsize(path) / 1024,
+                        2
+                    )
+                    if exists(path)
+                    else 0
+            }
+        )
+
+    st.dataframe(
+        pd.DataFrame(
+            file_rows
+        ),
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.divider()
+
+    st.subheader(
+        "Index Operations"
+    )
+
+    if st.button(
+        "🔄 Rebuild Index",
+        type="primary"
+    ):
+
+        with st.spinner(
+            "Running indexing.py..."
+        ):
+
+            success, output = (
+                run_python_module(
+                    "indexing.py"
+                )
+            )
+
+        if success:
+
+            st.success(
+                "Indexing completed successfully."
+            )
+
+            with st.expander(
+                "Indexing Output"
+            ):
+
+                st.text(
+                    output
+                )
+
+            st.cache_data.clear()
+            st.cache_resource.clear()
+
+            st.info(
+                "Reload the page to load the newly generated index."
+            )
+
+        else:
+
+            st.error(
+                "Indexing failed."
+            )
+
+            st.code(
+                output
+            )
 
 
 # ============================================================
@@ -1064,8 +2325,8 @@ elif page == "🔎 Search":
 
     st.write(
         """
-        Enter a query and retrieve documents using
-        TF-IDF or Hybrid TF-IDF + PageRank ranking.
+        Enter a query and retrieve documents using TF-IDF
+        or Hybrid TF-IDF + PageRank ranking.
         """
     )
 
@@ -1120,20 +2381,18 @@ elif page == "🔎 Search":
         elif vectorizer is None:
 
             st.error(
-                "TF-IDF model was not found. "
-                "Please run the indexing/search preparation first."
+                "TF-IDF model was not found."
             )
 
         else:
+
+            start_time = time.perf_counter()
 
             with st.spinner(
                 "Searching documents..."
             ):
 
-                if (
-                    ranking_method
-                    == "TF-IDF"
-                ):
+                if ranking_method == "TF-IDF":
 
                     results = (
                         perform_tfidf_search(
@@ -1158,6 +2417,16 @@ elif page == "🔎 Search":
                         )
                     )
 
+            elapsed = (
+                time.perf_counter()
+                - start_time
+            )
+
+            st.caption(
+                f"Query execution time: "
+                f"{elapsed:.6f} seconds"
+            )
+
             if results.empty:
 
                 st.info(
@@ -1174,32 +2443,20 @@ elif page == "🔎 Search":
                     results.iterrows()
                 ):
 
-                    title = str(
-                        row.get(
-                            "title",
-                            "Untitled"
-                        )
+                    title = get_title(
+                        row
                     )
 
-                    doc_id = str(
-                        row.get(
-                            "doc_id",
-                            ""
-                        )
+                    doc_id = get_doc_id(
+                        row
                     )
 
-                    category = str(
-                        row.get(
-                            "category",
-                            "Unknown"
-                        )
+                    category = get_category(
+                        row
                     )
 
-                    url = str(
-                        row.get(
-                            "url",
-                            ""
-                        )
+                    url = get_url(
+                        row
                     )
 
                     with st.container(
@@ -1207,8 +2464,7 @@ elif page == "🔎 Search":
                     ):
 
                         st.subheader(
-                            f"{int(row['rank'])}. "
-                            f"{title}"
+                            f"{int(row['rank'])}. {title}"
                         )
 
                         st.write(
@@ -1219,31 +2475,21 @@ elif page == "🔎 Search":
                             f"**Category:** {category}"
                         )
 
-                        if (
-                            ranking_method
-                            == "TF-IDF"
-                        ):
+                        st.write(
+                            f"**TF-IDF Score:** "
+                            f"{row['score']:.4f}"
+                        )
 
-                            st.write(
-                                f"**TF-IDF Score:** "
-                                f"{row['score']:.4f}"
-                            )
-
-                        else:
-
-                            st.write(
-                                f"**TF-IDF Score:** "
-                                f"{row['score']:.4f}"
-                            )
+                        if ranking_method == "Hybrid":
 
                             st.write(
                                 f"**PageRank:** "
-                                f"{row['pagerank']:.6f}"
+                                f"{row.get('pagerank', 0):.6f}"
                             )
 
                             st.write(
                                 f"**Hybrid Score:** "
-                                f"{row['hybrid_score']:.4f}"
+                                f"{row.get('hybrid_score', 0):.4f}"
                             )
 
                         if url.startswith(
@@ -1268,8 +2514,9 @@ elif page == "💡 Recommendations":
 
     st.write(
         """
-        Select a document to find other documents
-        with similar TF-IDF representations.
+        The recommendation system uses TF-IDF document
+        representations and cosine similarity to find
+        similar documents.
         """
     )
 
@@ -1459,7 +2706,9 @@ elif page == "📄 Document Profile":
 
             col1.metric(
                 "Document ID",
-                str(row["doc_id"])
+                str(
+                    row["doc_id"]
+                )
             )
 
             if (
@@ -1469,7 +2718,7 @@ elif page == "📄 Document Profile":
 
                 col2.metric(
                     "Word Count",
-                    int(
+                    safe_int(
                         row[
                             "processed_word_count"
                         ]
@@ -1490,7 +2739,7 @@ elif page == "📄 Document Profile":
 
                 col3.metric(
                     "Unique Terms",
-                    int(
+                    safe_int(
                         row[
                             "unique_terms"
                         ]
@@ -1532,10 +2781,6 @@ elif page == "📄 Document Profile":
                     url
                 )
 
-            # ------------------------------------------------
-            # Keywords
-            # ------------------------------------------------
-
             st.subheader(
                 "🔑 Top Keywords"
             )
@@ -1560,8 +2805,8 @@ elif page == "📄 Document Profile":
                             "keyword",
                             "tfidf_score"
                         ]
-                        if column
-                        in document_keywords.columns
+                        if column in
+                        document_keywords.columns
                     ]
 
                     st.dataframe(
@@ -1577,10 +2822,6 @@ elif page == "📄 Document Profile":
                     st.info(
                         "No keyword information available."
                     )
-
-            # ------------------------------------------------
-            # Content
-            # ------------------------------------------------
 
             st.subheader(
                 "📄 Document Content"
@@ -1685,10 +2926,6 @@ elif page == "🔗 PageRank":
             hide_index=True
         )
 
-        # ----------------------------------------------------
-        # PageRank chart
-        # ----------------------------------------------------
-
         st.subheader(
             "PageRank Distribution"
         )
@@ -1700,10 +2937,6 @@ elif page == "🔗 PageRank":
                 "pagerank"
             ]
         )
-
-        # ----------------------------------------------------
-        # Graph statistics
-        # ----------------------------------------------------
 
         if graph:
 
@@ -1752,10 +2985,6 @@ elif page == "📊 Analytics":
         "📊 Corpus and Performance Analytics"
     )
 
-    # --------------------------------------------------------
-    # Corpus Summary
-    # --------------------------------------------------------
-
     summary_file = os.path.join(
         VISUALIZATION_DIR,
         "corpus_summary.csv"
@@ -1779,145 +3008,95 @@ elif page == "📊 Analytics":
             hide_index=True
         )
 
-    else:
-
-        st.warning(
-            "Corpus summary not found."
-        )
-
     st.divider()
 
     # --------------------------------------------------------
-    # Document Length
+    # Performance information
     # --------------------------------------------------------
 
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "document_length_distribution.png"
+    st.subheader(
+        "⚡ System Performance"
     )
 
-    if exists(
-        image_path
-    ):
+    col1, col2, col3, col4 = st.columns(4)
 
-        st.subheader(
-            "Document Length Distribution"
-        )
-
-        st.image(
-            image_path,
-            use_container_width=True
-        )
-
-    # --------------------------------------------------------
-    # Category Distribution
-    # --------------------------------------------------------
-
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "category_distribution.png"
+    col1.metric(
+        "Documents",
+        len(documents)
     )
 
-    if exists(
-        image_path
-    ):
-
-        st.subheader(
-            "Category Distribution"
-        )
-
-        st.image(
-            image_path,
-            use_container_width=True
-        )
-
-    # --------------------------------------------------------
-    # Top Terms
-    # --------------------------------------------------------
-
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "top_terms.png"
+    col2.metric(
+        "Index Terms",
+        len(inverted_index)
     )
 
-    if exists(
-        image_path
-    ):
-
-        st.subheader(
-            "Top 20 Corpus Terms"
-        )
-
-        st.image(
-            image_path,
-            use_container_width=True
-        )
-
-    # --------------------------------------------------------
-    # PageRank Distribution
-    # --------------------------------------------------------
-
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "pagerank_distribution.png"
+    col3.metric(
+        "TF-IDF Features",
+        tfidf_matrix.shape[1]
+        if tfidf_matrix is not None
+        else 0
     )
 
-    if exists(
-        image_path
-    ):
-
-        st.subheader(
-            "PageRank Distribution"
+    col4.metric(
+        "Graph Nodes",
+        len(
+            graph.get(
+                "nodes",
+                []
+            )
         )
-
-        st.image(
-            image_path,
-            use_container_width=True
-        )
-
-    # --------------------------------------------------------
-    # Top PageRank Documents
-    # --------------------------------------------------------
-
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "top_pagerank_documents.png"
+        if graph
+        else 0
     )
 
-    if exists(
-        image_path
-    ):
+    st.divider()
 
-        st.subheader(
-            "Top PageRank Documents"
+    visualization_files = [
+        (
+            "Document Length Distribution",
+            "document_length_distribution.png"
+        ),
+        (
+            "Category Distribution",
+            "category_distribution.png"
+        ),
+        (
+            "Top 20 Corpus Terms",
+            "top_terms.png"
+        ),
+        (
+            "PageRank Distribution",
+            "pagerank_distribution.png"
+        ),
+        (
+            "Top PageRank Documents",
+            "top_pagerank_documents.png"
+        ),
+        (
+            "TF-IDF vs Hybrid Ranking",
+            "tfidf_vs_hybrid.png"
+        )
+    ]
+
+    for title, filename in visualization_files:
+
+        image_path = os.path.join(
+            VISUALIZATION_DIR,
+            filename
         )
 
-        st.image(
-            image_path,
-            use_container_width=True
-        )
+        if exists(
+            image_path
+        ):
 
-    # --------------------------------------------------------
-    # TF-IDF vs Hybrid
-    # --------------------------------------------------------
+            st.subheader(
+                title
+            )
 
-    image_path = os.path.join(
-        VISUALIZATION_DIR,
-        "tfidf_vs_hybrid.png"
-    )
-
-    if exists(
-        image_path
-    ):
-
-        st.subheader(
-            "TF-IDF vs Hybrid Ranking"
-        )
-
-        st.image(
-            image_path,
-            use_container_width=True
-        )
+            st.image(
+                image_path,
+                use_container_width=True
+            )
 
 
 # ============================================================
@@ -1950,10 +3129,6 @@ elif page == "📈 Evaluation":
 
         st.divider()
 
-        # ----------------------------------------------------
-        # Metric cards
-        # ----------------------------------------------------
-
         if (
             "method"
             in evaluation.columns
@@ -1983,7 +3158,7 @@ elif page == "📈 Evaluation":
 
                 row = selected.iloc[0]
 
-                metric_names = [
+                required_metrics = [
                     (
                         "Precision",
                         "precision"
@@ -1995,6 +3170,14 @@ elif page == "📈 Evaluation":
                     (
                         "F1",
                         "f1"
+                    ),
+                    (
+                        "Precision@K",
+                        "precision_at_k"
+                    ),
+                    (
+                        "Recall@K",
+                        "recall_at_k"
                     ),
                     (
                         "MAP",
@@ -2010,30 +3193,38 @@ elif page == "📈 Evaluation":
                     )
                 ]
 
-                columns = st.columns(
-                    len(metric_names)
-                )
+                available_metrics = [
+                    item
+                    for item in required_metrics
+                    if item[1] in row.index
+                ]
 
-                for column, (
-                    label,
-                    key
-                ) in zip(
-                    columns,
-                    metric_names
-                ):
+                if available_metrics:
 
-                    if key in row:
+                    columns = st.columns(
+                        min(
+                            len(
+                                available_metrics
+                            ),
+                            4
+                        )
+                    )
 
-                        column.metric(
+                    for index, (
+                        label,
+                        key
+                    ) in enumerate(
+                        available_metrics
+                    ):
+
+                        columns[
+                            index % len(columns)
+                        ].metric(
                             label,
                             f"{safe_float(row[key]):.4f}"
                         )
 
         st.divider()
-
-        # ----------------------------------------------------
-        # Per query
-        # ----------------------------------------------------
 
         if not per_query_evaluation.empty:
 
@@ -2047,9 +3238,7 @@ elif page == "📈 Evaluation":
                 hide_index=True
             )
 
-        # ----------------------------------------------------
-        # Evaluation chart
-        # ----------------------------------------------------
+        st.divider()
 
         image_path = os.path.join(
             VISUALIZATION_DIR,
@@ -2069,10 +3258,6 @@ elif page == "📈 Evaluation":
                 use_container_width=True
             )
 
-        # ----------------------------------------------------
-        # Metric explanation
-        # ----------------------------------------------------
-
         st.divider()
 
         st.subheader(
@@ -2081,30 +3266,31 @@ elif page == "📈 Evaluation":
 
         st.markdown(
             """
-            **Precision**  
-            Proportion of retrieved documents that are relevant.
+**Precision**  
+Proportion of retrieved documents that are relevant.
 
-            **Recall**  
-            Proportion of relevant documents that were retrieved.
+**Recall**  
+Proportion of relevant documents that were retrieved.
 
-            **F1-score**  
-            Harmonic mean of precision and recall.
+**F1-score**  
+Harmonic mean of precision and recall.
 
-            **Precision@5**  
-            Precision among the top 5 retrieved documents.
+**Precision@K**  
+Precision among the top K retrieved documents.
 
-            **Recall@5**  
-            Recall among the top 5 retrieved documents.
+**Recall@K**  
+Recall among the top K retrieved documents.
 
-            **MAP**  
-            Mean Average Precision across the evaluation queries.
+**MAP**  
+Mean Average Precision across evaluation queries.
 
-            **MRR**  
-            Mean Reciprocal Rank of the first relevant result.
+**MRR**  
+Mean Reciprocal Rank of the first relevant result.
 
-            **NDCG@10**  
-            Measures ranking quality while considering the position
-            of relevant documents in the top 10 results.
+**NDCG**  
+Normalized Discounted Cumulative Gain, which evaluates
+ranking quality while considering the position of relevant
+documents.
             """
         )
 
@@ -2116,9 +3302,10 @@ elif page == "📈 Evaluation":
 st.sidebar.divider()
 
 st.sidebar.caption(
-    "Information Retrieval Assignment"
+    "Information Retrieval Assignment - 2"
 )
 
 st.sidebar.caption(
-    "TF-IDF • PageRank • Hybrid Ranking • Recommendations"
+    "TF-IDF • PageRank • Hybrid Ranking • "
+    "Content-Based Recommendation"
 )
